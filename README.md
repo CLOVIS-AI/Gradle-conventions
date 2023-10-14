@@ -4,8 +4,7 @@ Collection of Gradle plugins we use in our projects to ensure consistency.
 
 ## License
 
-<!-- Mentions under which license you are publishing the project. -->
-<!-- Add the full text to the LICENSE file. -->
+This project is licensed under the [Apache 2.0 license](LICENSE).
 
 ## Contributing
 
