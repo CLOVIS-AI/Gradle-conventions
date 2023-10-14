@@ -10,4 +10,5 @@ rootProject.name = "OpenSavvy Gradle Conventions"
 
 include(
 	"base",
+	"settings",
 )
