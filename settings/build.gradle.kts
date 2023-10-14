@@ -3,12 +3,6 @@ plugins {
 	`maven-publish`
 }
 
-group = "dev.opensavvy.gradle.conventions"
-
-repositories {
-	mavenCentral()
-}
-
 gradlePlugin {
 	plugins {
 		create("build-cache") {
