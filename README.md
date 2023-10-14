@@ -1,10 +1,6 @@
-# Playground: Baseline
+# OpenSavvy Gradle Conventions
 
-<!-- When using the Playground to bootstrap a project, replace this by your project description. -->
-This a template to easily bootstrap your projects.
-
-> This project is part of the OpenSavvy Playground.
-> To learn more, visit [this page](docs/playground/README.md).
+Collection of Gradle plugins we use in our projects to ensure consistency.
 
 ## License
 
