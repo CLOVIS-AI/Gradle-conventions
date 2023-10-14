@@ -12,4 +12,5 @@ include(
 	"base",
 	"settings",
 	"test-utils",
+	"versions",
 )

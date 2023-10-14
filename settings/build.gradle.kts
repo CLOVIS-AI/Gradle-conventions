@@ -3,6 +3,10 @@ plugins {
 	`maven-publish`
 }
 
+dependencies {
+	implementation(project(":versions"))
+}
+
 gradlePlugin {
 	plugins {
 		create("build-cache") {
