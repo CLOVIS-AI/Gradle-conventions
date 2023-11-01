@@ -120,7 +120,7 @@ fun SuiteDsl.baseTests() = suite("Base plugin") {
 				.withArguments("printVersion")
 				.build()
 
-			result.output shouldContain "Version: 0.0.0-dev"
+			result.output shouldContain "Version: DEV"
 		}
 	}
 }
