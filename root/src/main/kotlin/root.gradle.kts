@@ -2,6 +2,7 @@ package dev.opensavvy.conventions
 
 plugins {
 	id("io.github.gradle-nexus.publish-plugin")
+	id("dev.adamko.dokkatoo-html")
 }
 
 nexusPublishing {
@@ -18,6 +19,13 @@ nexusPublishing {
 			username.set(System.getenv("OSSRH_USERNAME"))
 			password.set(System.getenv("OSSRH_PASSWORD"))
 		}
+	}
+}
+
+dependencies {
+	// This is required at the moment, see https://github.com/adamko-dev/dokkatoo/issues/14
+	dokkatoo.versions.jetbrainsDokka.map { dokkaVersion ->
+		"org.jetbrains.dokka:all-modules-page-plugin:$dokkaVersion"
 	}
 }
 

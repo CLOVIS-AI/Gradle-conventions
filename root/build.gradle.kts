@@ -7,6 +7,7 @@ dependencies {
 	api(project(":test-utils"))
 
 	api(libs.gradle.nexusPublish)
+	api(libs.gradle.dokkatoo)
 }
 
 repositories {
