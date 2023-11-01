@@ -1,5 +1,11 @@
 # Settings plugins
 
+## Combined
+
+> Plugin ID: `dev.opensavvy.conventions.settings.all`
+
+Applies all the other plugins in this file, to avoid specifying them one by one.
+
 ## Build Cache
 
 > Plugin ID: `dev.opensavvy.conventions.settings.build-cache`
