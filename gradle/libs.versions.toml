@@ -1,10 +1,19 @@
 [versions]
 junit5 = "5.7.1"
+prepared = "0.4.0"
 
 [plugins]
 
 [libraries]
+prepared-suite = { module = "dev.opensavvy.prepared:suite", version.ref = "prepared" }
+prepared-kotest = { module = "dev.opensavvy.prepared:runner-kotest", version.ref = "prepared" }
+prepared-gradle = { module = "dev.opensavvy.prepared:compat-gradle", version.ref = "prepared" }
 junit5-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit5" }
 junit5-launcher = { module = "org.junit.platform:junit-platform-launcher" }
 
 [bundles]
+prepared = [
+	"prepared-suite",
+	"prepared-kotest",
+	"prepared-gradle",
+]
