@@ -9,6 +9,11 @@ dependencies {
 
 gradlePlugin {
 	plugins {
+		create("combined") {
+			id = "dev.opensavvy.conventions.settings.all"
+			implementationClass = "dev.opensavvy.conventions.settings.Combined"
+		}
+
 		create("build-cache") {
 			id = "dev.opensavvy.conventions.settings.build-cache"
 			implementationClass = "dev.opensavvy.conventions.settings.BuildCache"
