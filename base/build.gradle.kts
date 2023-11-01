@@ -4,8 +4,7 @@ plugins {
 }
 
 dependencies {
-	testImplementation(libs.junit5.jupiter)
-	testRuntimeOnly(libs.junit5.launcher)
+	testImplementation(project(":test-utils"))
 }
 
 tasks.named<Test>("test") {
