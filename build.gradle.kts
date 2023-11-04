@@ -9,16 +9,10 @@
 plugins {
 	`kotlin-dsl` apply false
 	`embedded-kotlin` apply false
+
+	id("dev.opensavvy.conventions.plugin")
 }
 
-val appVersion: String? by project
-
 allprojects {
-	version = appVersion ?: "0.0.0-dev"
-	group = "dev.opensavvy.gradle.conventions"
-
-	repositories {
-		mavenCentral()
-		gradlePluginPortal()
-	}
+	pluginManager.apply("dev.opensavvy.conventions.plugin")
 }
