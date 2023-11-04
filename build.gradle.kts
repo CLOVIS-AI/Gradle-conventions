@@ -6,6 +6,11 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
+plugins {
+	`kotlin-dsl` apply false
+	`embedded-kotlin` apply false
+}
+
 val appVersion: String? by project
 
 allprojects {
