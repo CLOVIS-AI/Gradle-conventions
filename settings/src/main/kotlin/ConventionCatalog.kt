@@ -11,8 +11,8 @@ class ConventionCatalog : Plugin<Settings> {
 			register("opensavvyConventions") {
 				// Aligned versions used by all our projects
 				version("kotlin", Versions.KOTLIN)
-				version("java-compat", Versions.JAVA_COMPAT)
-				version("java-app", Versions.JAVA_APP)
+				version("java-compat", Versions.JAVA_COMPAT.toString())
+				version("java-app", Versions.JAVA_APP.toString())
 
 				// Our other convention plugins
 				plugin("base", "dev.opensavvy.conventions.base")
