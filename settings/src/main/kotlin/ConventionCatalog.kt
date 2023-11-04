@@ -1,5 +1,6 @@
 package dev.opensavvy.conventions.settings
 
+import dev.opensavvy.conventions.versions.OPENSAVVY_CONVENTIONS_VERSION
 import dev.opensavvy.conventions.versions.Versions
 import org.gradle.api.Plugin
 import org.gradle.api.initialization.Settings
@@ -13,10 +14,11 @@ class ConventionCatalog : Plugin<Settings> {
 				version("kotlin", Versions.KOTLIN)
 				version("java-compat", Versions.JAVA_COMPAT.toString())
 				version("java-app", Versions.JAVA_APP.toString())
+				version("self", OPENSAVVY_CONVENTIONS_VERSION)
 
 				// Our other convention plugins
-				plugin("base", "dev.opensavvy.conventions.base")
-				plugin("root", "dev.opensavvy.conventions.root")
+				plugin("base", "dev.opensavvy.conventions.base").versionRef("self")
+				plugin("root", "dev.opensavvy.conventions.root").versionRef("self")
 
 				// Plugins and libraries that must use the same versions as ours
 				plugin("aligned-kotlin", "org.jetbrains.kotlin.multiplatform").versionRef("kotlin")
