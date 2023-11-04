@@ -11,6 +11,7 @@ rootProject.name = "OpenSavvy Gradle Conventions"
 include(
 	"base",
 	"root",
+	"kotlin",
 	"settings",
 	"test-utils",
 )
