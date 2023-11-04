@@ -7,6 +7,9 @@ dokkatoo = "2.0.0"
 # https://github.com/gradle-nexus/publish-plugin/releases
 nexusPublish = "1.3.0"
 
+# https://github.com/gradle/foojay-toolchains
+foojayResolver = "0.7.0"
+
 [plugins]
 
 [libraries]
@@ -16,6 +19,7 @@ prepared-gradle = { module = "dev.opensavvy.prepared:compat-gradle", version.ref
 
 gradle-nexusPublish = { module = "io.github.gradle-nexus:publish-plugin", version.ref = "nexusPublish" }
 gradle-dokkatoo = { module = "dev.adamko.dokkatoo:dokkatoo-plugin", version.ref = "dokkatoo" }
+gradle-foojayResolver = { module = "org.gradle.toolchains:foojay-resolver", version.ref = "foojayResolver" }
 
 [bundles]
 prepared = [

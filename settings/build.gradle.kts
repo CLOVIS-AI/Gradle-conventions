@@ -9,12 +9,14 @@ repositories {
 
 dependencies {
 	implementation("dev.opensavvy.gradle.conventions:versions:$version")
+
+	implementation(libs.gradle.foojayResolver)
 }
 
 gradlePlugin {
 	plugins {
 		create("combined") {
-			id = "dev.opensavvy.conventions.settings.all"
+			id = "dev.opensavvy.conventions.settings"
 			implementationClass = "dev.opensavvy.conventions.settings.Combined"
 		}
 
@@ -26,6 +28,11 @@ gradlePlugin {
 		create("plugin-catalog") {
 			id = "dev.opensavvy.conventions.settings.plugin-catalog"
 			implementationClass = "dev.opensavvy.conventions.settings.ConventionCatalog"
+		}
+
+		create("java-toolchains") {
+			id = "dev.opensavvy.conventions.settings.java-toolchains"
+			implementationClass = "dev.opensavvy.conventions.settings.JavaToolchains"
 		}
 	}
 }

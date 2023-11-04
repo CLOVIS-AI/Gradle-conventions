@@ -8,5 +8,6 @@ class Combined : Plugin<Settings> {
 	override fun apply(target: Settings) {
 		target.plugins.apply(BuildCache::class.java)
 		target.plugins.apply(ConventionCatalog::class.java)
+		target.plugins.apply(JavaToolchains::class.java)
 	}
 }
