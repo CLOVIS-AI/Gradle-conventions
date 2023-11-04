@@ -3,8 +3,12 @@ plugins {
 	`maven-publish`
 }
 
+repositories {
+	mavenCentral()
+}
+
 dependencies {
-	implementation(project(":versions"))
+	implementation("dev.opensavvy.gradle.conventions:versions:$version")
 }
 
 gradlePlugin {

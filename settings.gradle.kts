@@ -13,5 +13,8 @@ include(
 	"root",
 	"settings",
 	"test-utils",
+)
+
+includeBuild(
 	"versions",
 )
