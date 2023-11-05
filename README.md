@@ -2,6 +2,15 @@
 
 Collection of Gradle plugins we use in our projects to ensure consistency.
 
+## Plugins
+
+This repository contains plugins, sorted in the following categories:
+
+- [Base](base): base tasks, Maven coordinates
+- [Root](root): declarations for the root/aggregation project
+- [Settings](settings): settings plugins to configure caching, etc
+- [Kotlin](kotlin): Kotlin-specific configuration
+
 ## License
 
 This project is licensed under the [Apache 2.0 license](LICENSE).
