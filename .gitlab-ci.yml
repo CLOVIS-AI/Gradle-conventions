@@ -30,6 +30,19 @@ check:
 
   interruptible: true
 
+example-kotlin:
+  extends: [ .os.gradle ]
+  needs: [ os.version ]
+  stage: test
+
+  script:
+    - >
+      ./gradlew build run
+      -p examples/kotlin --include-build ../..
+      -PappVersion=$project_version
+
+  interruptible: true
+
 # endregion
 
 mirror-playground:

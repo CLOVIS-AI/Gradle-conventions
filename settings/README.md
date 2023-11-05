@@ -2,7 +2,7 @@
 
 ## Combined
 
-> Plugin ID: `dev.opensavvy.conventions.settings.all`
+> Plugin ID: `dev.opensavvy.conventions.settings`
 
 Applies all the other plugins in this file, to avoid specifying them one by one.
 
@@ -20,3 +20,9 @@ Applies all the other plugins in this file, to avoid specifying them one by one.
 > Plugin ID: `dev.opensavvy.conventions.settings.plugin-catalog`
 
 - Creates a version catalog with all the plugins contained in this repository
+
+## Java Toolchains
+
+> Plugin ID: `dev.opensavvy.conventions.settings.java-toolchains`
+
+- Applies the [FooJay Resolver](https://github.com/gradle/foojay-toolchains)
