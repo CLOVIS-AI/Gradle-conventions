@@ -15,6 +15,9 @@ dependencies {
 	api("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}")
 	implementation("dev.opensavvy.gradle.conventions:versions:$version")
 
+	implementation(libs.gradle.dokkatoo)
+	implementation(libs.gradle.nexusPublish)
+
 	testImplementation(project(":test-utils"))
 }
 
