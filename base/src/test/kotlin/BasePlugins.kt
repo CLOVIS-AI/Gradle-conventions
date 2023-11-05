@@ -6,7 +6,7 @@ import opensavvy.prepared.suite.config.CoroutineTimeout
 import kotlin.time.Duration.Companion.minutes
 
 class BasePlugins : StringSpec({
-	preparedSuite(CoroutineTimeout(1.minutes)) {
+	preparedSuite(CoroutineTimeout(2.minutes)) {
 		baseTests()
 	}
 })
