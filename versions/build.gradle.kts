@@ -24,3 +24,7 @@ val createVersion by tasks.registering {
 tasks.compileKotlin {
 	dependsOn(createVersion)
 }
+
+kotlin {
+	jvmToolchain(8)
+}
