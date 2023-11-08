@@ -1,5 +1,6 @@
 plugins {
 	`embedded-kotlin`
+	`maven-publish`
 
 	id("dev.opensavvy.conventions.plugin")
 }
@@ -23,4 +24,16 @@ val createVersion by tasks.registering {
 
 tasks.compileKotlin {
 	dependsOn(createVersion)
+}
+
+kotlin {
+	jvmToolchain(8)
+}
+
+publishing {
+	publications {
+		register("versions", MavenPublication::class.java) {
+			from(components["java"])
+		}
+	}
 }

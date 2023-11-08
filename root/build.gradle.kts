@@ -4,10 +4,10 @@ plugins {
 }
 
 dependencies {
-	api(project(":test-utils"))
-
 	api(libs.gradle.nexusPublish)
 	api(libs.gradle.dokkatoo)
+
+	testImplementation(project(":test-utils"))
 }
 
 repositories {
