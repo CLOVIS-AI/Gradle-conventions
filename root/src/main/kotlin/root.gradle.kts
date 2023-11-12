@@ -24,9 +24,11 @@ nexusPublishing {
 
 dependencies {
 	// This is required at the moment, see https://github.com/adamko-dev/dokkatoo/issues/14
-	dokkatoo.versions.jetbrainsDokka.map { dokkaVersion ->
-		"org.jetbrains.dokka:all-modules-page-plugin:$dokkaVersion"
-	}
+	dokkatooPluginHtml(
+		dokkatoo.versions.jetbrainsDokka.map { dokkaVersion ->
+			"org.jetbrains.dokka:all-modules-page-plugin:$dokkaVersion"
+		}
+	)
 }
 
 repositories {

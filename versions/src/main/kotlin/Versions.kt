@@ -12,7 +12,7 @@ object Versions {
 	 * Because all users of the libraries will need to have at least this version of Java to import the library,
 	 * we will intentionally delay upgrading this version.
 	 */
-	const val JAVA_COMPAT = 11
+	const val JAVA_COMPAT = 17
 
 	/**
 	 * Version of Java used when creating final projects.
