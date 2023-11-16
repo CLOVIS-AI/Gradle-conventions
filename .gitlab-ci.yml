@@ -31,9 +31,15 @@ check:
   interruptible: true
 
 example-kotlin:
+  parallel:
+    matrix:
+      - java_version: [ 11, 17, 20 ]
+
   extends: [ .os.gradle ]
   needs: [ os.version ]
   stage: test
+
+  image: "eclipse-temurin:$java_version"
 
   script:
     - >
