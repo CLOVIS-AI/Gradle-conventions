@@ -10,6 +10,7 @@ rootProject.name = "OpenSavvy Gradle Conventions"
 
 pluginManagement {
 	includeBuild("gradle/plugin")
+	includeBuild("base/meta-base")
 }
 
 include(
