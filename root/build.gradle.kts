@@ -7,8 +7,8 @@ buildscript {
 }
 
 plugins {
-	`kotlin-dsl`
-	`maven-publish`
+	id("dev.opensavvy.conventions.meta.base")
+	id("dev.opensavvy.conventions.meta.plugin")
 }
 
 dependencies {
@@ -19,14 +19,4 @@ dependencies {
 
 	api(libs.gradle.nexusPublish)
 	api(libs.gradle.dokkatoo)
-
-	testImplementation(project(":test-utils"))
-}
-
-repositories {
-	gradlePluginPortal()
-}
-
-tasks.named<Test>("test") {
-	useJUnitPlatform()
 }

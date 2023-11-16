@@ -9,10 +9,4 @@
 plugins {
 	`kotlin-dsl` apply false
 	`embedded-kotlin` apply false
-
-	id("dev.opensavvy.conventions.plugin")
-}
-
-allprojects {
-	pluginManager.apply("dev.opensavvy.conventions.plugin")
 }

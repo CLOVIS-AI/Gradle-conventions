@@ -1,10 +1,6 @@
 plugins {
-	`kotlin-dsl`
-	`maven-publish`
-}
-
-repositories {
-	mavenCentral()
+	id("dev.opensavvy.conventions.meta.base")
+	id("dev.opensavvy.conventions.meta.plugin")
 }
 
 dependencies {
