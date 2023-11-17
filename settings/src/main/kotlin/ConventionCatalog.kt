@@ -19,6 +19,7 @@ class ConventionCatalog : Plugin<Settings> {
 				// Our other convention plugins
 				plugin("base", "dev.opensavvy.conventions.base").versionRef("self")
 				plugin("root", "dev.opensavvy.conventions.root").versionRef("self")
+				plugin("plugin", "dev.opensavvy.conventions.plugin").versionRef("self")
 				plugin("kotlin-base", "dev.opensavvy.conventions.kotlin.base").versionRef("self")
 				plugin("kotlin-library", "dev.opensavvy.conventions.kotlin.library").versionRef("self")
 				plugin("kotlin-application", "dev.opensavvy.conventions.kotlin.application").versionRef("self")

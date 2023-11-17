@@ -15,7 +15,7 @@ fun SuiteDsl.baseTests() = suite("Base plugin") {
 	}
 
 	suite("Group") {
-		test("Should fail if the group is not configured") {
+		test("Should warn if the group is not configured") {
 			gradle.settingsKts("""
 				rootProject.name = "hello-world"
 			""".trimIndent())
@@ -29,7 +29,7 @@ fun SuiteDsl.baseTests() = suite("Base plugin") {
 			val result = gradle.runner()
 				.withPluginClasspath()
 				.withArguments("build")
-				.buildAndFail()
+				.build()
 
 			result.output shouldContain "Missing group declaration; you should add 'appGroup=<your group name>' in the gradle.properties file"
 		}

@@ -1,12 +1,13 @@
 plugins {
-	`kotlin-dsl`
-	`maven-publish`
+	id("dev.opensavvy.conventions.meta.base")
+	id("dev.opensavvy.conventions.meta.plugin")
 }
 
-dependencies {
-	testImplementation(project(":test-utils"))
-}
-
-tasks.named<Test>("test") {
-	useJUnitPlatform()
+gradlePlugin {
+	plugins {
+		create("base") {
+			id = "dev.opensavvy.conventions.base"
+			implementationClass = "dev.opensavvy.conventions.OpenSavvyBasePlugin"
+		}
+	}
 }
