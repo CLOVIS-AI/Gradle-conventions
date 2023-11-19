@@ -4,7 +4,7 @@ object Versions {
 	/**
 	 * Version of Kotlin we use in our plugins.
 	 */
-	const val KOTLIN = "1.9.10"
+	const val KOTLIN = "1.9.20"
 
 	/**
 	 * Version of Java used when creating libraries.
