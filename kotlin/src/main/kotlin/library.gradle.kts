@@ -1,9 +1,6 @@
 package dev.opensavvy.conventions.kotlin
 
 import dev.opensavvy.conventions.versions.Versions
-import gradle.kotlin.dsl.accessors._55d9ef7b350efd189ea67d48808406de.dokkatoo
-import gradle.kotlin.dsl.accessors._55d9ef7b350efd189ea67d48808406de.publishing
-import gradle.kotlin.dsl.accessors._55d9ef7b350efd189ea67d48808406de.signing
 import java.net.URI
 
 plugins {
