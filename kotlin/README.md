@@ -15,6 +15,13 @@
 - Configures publishing to Maven Central
 - Configures documentation generation with Dokkatoo
 
+## Abstract Library
+
+> Plugin ID: `dev.opensavvy.conventions.kotlin.abstractLibrary`
+
+Configures everything the Library plugin does, but without applying the Kotlin plugin.
+This makes it usable for publishing other kinds of artifacts, like Gradle plugins.
+
 ## Application
 
 > Plugin ID: `dev.opensavvy.conventions.kotlin.application`
