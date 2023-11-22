@@ -23,6 +23,7 @@ class ConventionCatalog : Plugin<Settings> {
 				plugin("kotlin-base", "dev.opensavvy.conventions.kotlin.base").versionRef("self")
 				plugin("kotlin-library", "dev.opensavvy.conventions.kotlin.library").versionRef("self")
 				plugin("kotlin-application", "dev.opensavvy.conventions.kotlin.application").versionRef("self")
+				plugin("kotlin-internal", "dev.opensavvy.conventions.kotlin.internal").versionRef("self")
 
 				// Plugins and libraries that must use the same versions as ours
 				plugin("aligned-kotlin", "org.jetbrains.kotlin.multiplatform").versionRef("kotlin")
