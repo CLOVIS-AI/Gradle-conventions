@@ -12,6 +12,7 @@ class ConventionCatalog : Plugin<Settings> {
 			register("opensavvyConventions") {
 				// Aligned versions used by all our projects
 				version("kotlin", Versions.KOTLIN)
+				version("composeMultiplatform", Versions.COMPOSE_MULTIPLATFORM)
 				version("java-compat", Versions.JAVA_COMPAT.toString())
 				version("java-app", Versions.JAVA_APP.toString())
 				version("self", OPENSAVVY_CONVENTIONS_VERSION)
@@ -28,6 +29,7 @@ class ConventionCatalog : Plugin<Settings> {
 				// Plugins and libraries that must use the same versions as ours
 				plugin("aligned-kotlin", "org.jetbrains.kotlin.multiplatform").versionRef("kotlin")
 				plugin("aligned-kotlinx-serialization", "org.jetbrains.kotlin.plugin.serialization").versionRef("kotlin")
+				plugin("aligned-composeMultiplatform", "org.jetbrains.compose").versionRef("composeMultiplatform")
 				library("aligned-kotlin-test-common", "org.jetbrains.kotlin", "kotlin-test-common").versionRef("kotlin")
 				library("aligned-kotlin-test-annotations", "org.jetbrains.kotlin", "kotlin-test-annotations-common").versionRef("kotlin")
 				library("aligned-kotlin-test-junit", "org.jetbrains.kotlin", "kotlin-test-junit").versionRef("kotlin")
