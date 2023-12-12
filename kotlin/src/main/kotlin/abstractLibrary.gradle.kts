@@ -69,6 +69,14 @@ dokkatoo {
 	}
 }
 
+val documentationJar by tasks.registering(Jar::class) {
+	description = "Generate the documentation JAR for MavenCentral"
+	group = "publishing"
+
+	from(tasks.named("dokkatooGeneratePublicationHtml"))
+	archiveClassifier.set("javadoc")
+}
+
 // endregion
 // region GitLab Maven Registry
 
@@ -101,16 +109,9 @@ publishing {
 // endregion
 // region Maven Central
 
-val fakeJavadocJar by tasks.registering(Jar::class) {
-	description = "Fake documentation JAR for MavenCentral"
-	group = "publishing"
-
-	archiveClassifier.set("javadoc")
-}
-
 publishing {
 	publications.withType<MavenPublication> {
-		artifact(fakeJavadocJar.get())
+		artifact(documentationJar)
 
 		pom {
 			name.set(config.name)
