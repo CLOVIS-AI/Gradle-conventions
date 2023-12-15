@@ -1,4 +1,4 @@
-rootProject.name = "Kotlin example"
+rootProject.name = "Kotlin-example"
 
 pluginManagement {
     includeBuild("../..") // if using this in a real project, remove this

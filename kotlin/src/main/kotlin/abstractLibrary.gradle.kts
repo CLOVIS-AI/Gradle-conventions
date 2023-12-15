@@ -17,91 +17,6 @@ interface LibraryExtension {
 
 val config = extensions.create<LibraryExtension>("library")
 
-// region GitLab Maven Registry
-
-// When running in GitLab CI, uses the auto-created CI variables to configure the GitLab Maven Registry.
-// For more information on the variables and their values, see:
-// - https://docs.gitlab.com/ee/user/packages/maven_repository/
-// - https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
-publishing {
-	repositories {
-		val projectId = System.getenv("CI_PROJECT_ID") ?: return@repositories
-		val token = System.getenv("CI_JOB_TOKEN") ?: return@repositories
-		val api = System.getenv("CI_API_V4_URL") ?: return@repositories
-
-		maven {
-			name = "GitLab"
-			url = uri("$api/projects/$projectId/packages/maven")
-
-			credentials(HttpHeaderCredentials::class.java) {
-				name = "Job-Token"
-				value = token
-			}
-
-			authentication {
-				create<HttpHeaderAuthentication>("header")
-			}
-		}
-	}
-}
-
-// endregion
-// region Maven Central
-
-val fakeJavadocJar by tasks.registering(Jar::class) {
-	description = "Fake documentation JAR for MavenCentral"
-	group = "publishing"
-
-	archiveClassifier.set("javadoc")
-}
-
-publishing {
-	publications.withType<MavenPublication> {
-		artifact(fakeJavadocJar.get())
-
-		pom {
-			name.set(config.name)
-			description.set(config.description)
-			url.set(config.homeUrl)
-
-			licenses {
-				afterEvaluate {
-					license(config.license.get())
-				}
-			}
-
-			developers {
-				developer {
-					id.set("opensavvy")
-					name.set("OpenSavvy")
-					email.set("contact@opensavvy.dev")
-				}
-			}
-
-			scm {
-				url.set(System.getenv("CI_PROJECT_URL"))
-			}
-		}
-	}
-}
-
-run {
-	ext["signing.keyId"] = System.getenv("SIGNING_KEY_ID") ?: return@run
-	ext["signing.password"] = System.getenv("SIGNING_PASSWORD") ?: return@run
-	ext["signing.secretKeyRingFile"] = System.getenv("SIGNING_KEY_RING") ?: return@run
-
-	// Workaround for https://youtrack.jetbrains.com/issue/KT-61858
-	val signingTasks = tasks.withType(Sign::class)
-	tasks.withType(AbstractPublishToMaven::class).configureEach {
-		dependsOn(signingTasks)
-	}
-
-	signing {
-		sign(publishing.publications)
-	}
-}
-
-// endregion
 // region Documentation
 
 dokkatoo {
@@ -151,6 +66,92 @@ dokkatoo {
 		}
 
 		// endregion
+	}
+}
+
+val documentationJar by tasks.registering(Jar::class) {
+	description = "Generate the documentation JAR for MavenCentral"
+	group = "publishing"
+
+	from(tasks.named("dokkatooGeneratePublicationHtml"))
+	archiveClassifier.set("javadoc")
+}
+
+// endregion
+// region GitLab Maven Registry
+
+// When running in GitLab CI, uses the auto-created CI variables to configure the GitLab Maven Registry.
+// For more information on the variables and their values, see:
+// - https://docs.gitlab.com/ee/user/packages/maven_repository/
+// - https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
+publishing {
+	repositories {
+		val projectId = System.getenv("CI_PROJECT_ID") ?: return@repositories
+		val token = System.getenv("CI_JOB_TOKEN") ?: return@repositories
+		val api = System.getenv("CI_API_V4_URL") ?: return@repositories
+
+		maven {
+			name = "GitLab"
+			url = uri("$api/projects/$projectId/packages/maven")
+
+			credentials(HttpHeaderCredentials::class.java) {
+				name = "Job-Token"
+				value = token
+			}
+
+			authentication {
+				create<HttpHeaderAuthentication>("header")
+			}
+		}
+	}
+}
+
+// endregion
+// region Maven Central
+
+publishing {
+	publications.withType<MavenPublication> {
+		artifact(documentationJar)
+
+		pom {
+			name.set(config.name)
+			description.set(config.description)
+			url.set(config.homeUrl)
+
+			licenses {
+				afterEvaluate {
+					license(config.license.get())
+				}
+			}
+
+			developers {
+				developer {
+					id.set("opensavvy")
+					name.set("OpenSavvy")
+					email.set("contact@opensavvy.dev")
+				}
+			}
+
+			scm {
+				url.set(System.getenv("CI_PROJECT_URL"))
+			}
+		}
+	}
+}
+
+run {
+	ext["signing.keyId"] = System.getenv("SIGNING_KEY_ID") ?: return@run
+	ext["signing.password"] = System.getenv("SIGNING_PASSWORD") ?: return@run
+	ext["signing.secretKeyRingFile"] = System.getenv("SIGNING_KEY_RING") ?: return@run
+
+	// Workaround for https://youtrack.jetbrains.com/issue/KT-61858
+	val signingTasks = tasks.withType(Sign::class)
+	tasks.withType(AbstractPublishToMaven::class).configureEach {
+		dependsOn(signingTasks)
+	}
+
+	signing {
+		sign(publishing.publications)
 	}
 }
 
