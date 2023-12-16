@@ -1,15 +1,11 @@
 plugins {
 	alias(opensavvyConventions.plugins.base)
-	alias(opensavvyConventions.plugins.kotlin.library)
-}
-
-kotlin {
-	jvm()
-	linuxX64()
+	alias(opensavvyConventions.plugins.plugin)
+	alias(opensavvyConventions.plugins.kotlin.abstractLibrary)
 }
 
 library {
-	name.set("Kotlin Sample: Core")
+	name.set("Kotlin Sample: Gradle Plugin")
 	description.set("Just a normal sample")
 	homeUrl.set("https://gitlab.com/opensavvy/automation/gradle-conventions")
 

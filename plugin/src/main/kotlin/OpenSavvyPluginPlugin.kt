@@ -5,6 +5,7 @@ import org.gradle.api.Project
 import org.gradle.api.credentials.HttpHeaderCredentials
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.publish.PublishingExtension
+import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.tasks.testing.Test
 import org.gradle.authentication.http.HttpHeaderAuthentication
 import org.gradle.jvm.toolchain.JavaLanguageVersion
@@ -30,6 +31,8 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 		}
 
 		target.extensions.configure<JavaPluginExtension> {
+			withSourcesJar()
+
 			toolchain {
 				languageVersion.set(JavaLanguageVersion.of(javaCompatibility))
 			}
@@ -59,6 +62,12 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 					authentication {
 						register<HttpHeaderAuthentication>("header")
 					}
+				}
+			}
+
+			publications.withType(MavenPublication::class.java) {
+				if (name.matches(Regex(".*PluginMarkerMaven"))) {
+					from(target.components["java"])
 				}
 			}
 		}

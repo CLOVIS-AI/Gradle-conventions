@@ -109,32 +109,45 @@ publishing {
 // endregion
 // region Maven Central
 
+fun MavenPom.setPomMetadataForMavenCentral() {
+	name.set(config.name)
+	description.set(config.description)
+	url.set(config.homeUrl)
+
+	licenses {
+		afterEvaluate {
+			license(config.license.get())
+		}
+	}
+
+	developers {
+		developer {
+			id.set("opensavvy")
+			name.set("OpenSavvy")
+			email.set("contact@opensavvy.dev")
+		}
+	}
+
+	scm {
+		url.set(System.getenv("CI_PROJECT_URL"))
+	}
+}
+
 publishing {
 	publications.withType<MavenPublication> {
 		artifact(documentationJar)
 
 		pom {
-			name.set(config.name)
-			description.set(config.description)
-			url.set(config.homeUrl)
+			setPomMetadataForMavenCentral()
+		}
+	}
+}
 
-			licenses {
-				afterEvaluate {
-					license(config.license.get())
-				}
-			}
-
-			developers {
-				developer {
-					id.set("opensavvy")
-					name.set("OpenSavvy")
-					email.set("contact@opensavvy.dev")
-				}
-			}
-
-			scm {
-				url.set(System.getenv("CI_PROJECT_URL"))
-			}
+afterEvaluate {
+	tasks.withType(GenerateMavenPom::class.java) {
+		// When the current project is a Gradle plugin, this configures the POM for MavenCentral for the marker artifact
+		if (name.matches(Regex("generatePomFileFor.*MarkerMavenPublication"))) {
+			pom.setPomMetadataForMavenCentral()
 		}
 	}
 }
