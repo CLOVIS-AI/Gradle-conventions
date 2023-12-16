@@ -1,5 +1,6 @@
 plugins {
 	alias(opensavvyConventions.plugins.kotlin.application)
+	application
 }
 
 kotlin {
