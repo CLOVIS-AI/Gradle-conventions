@@ -143,6 +143,15 @@ publishing {
 	}
 }
 
+afterEvaluate {
+	tasks.withType(GenerateMavenPom::class.java) {
+		// When the current project is a Gradle plugin, this configures the POM for MavenCentral for the marker artifact
+		if (name.matches(Regex("generatePomFileFor.*MarkerMavenPublication"))) {
+			pom.setPomMetadataForMavenCentral()
+		}
+	}
+}
+
 run {
 	ext["signing.keyId"] = System.getenv("SIGNING_KEY_ID") ?: return@run
 	ext["signing.password"] = System.getenv("SIGNING_PASSWORD") ?: return@run
