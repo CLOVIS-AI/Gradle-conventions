@@ -109,32 +109,36 @@ publishing {
 // endregion
 // region Maven Central
 
+fun MavenPom.setPomMetadataForMavenCentral() {
+	name.set(config.name)
+	description.set(config.description)
+	url.set(config.homeUrl)
+
+	licenses {
+		afterEvaluate {
+			license(config.license.get())
+		}
+	}
+
+	developers {
+		developer {
+			id.set("opensavvy")
+			name.set("OpenSavvy")
+			email.set("contact@opensavvy.dev")
+		}
+	}
+
+	scm {
+		url.set(System.getenv("CI_PROJECT_URL"))
+	}
+}
+
 publishing {
 	publications.withType<MavenPublication> {
 		artifact(documentationJar)
 
 		pom {
-			name.set(config.name)
-			description.set(config.description)
-			url.set(config.homeUrl)
-
-			licenses {
-				afterEvaluate {
-					license(config.license.get())
-				}
-			}
-
-			developers {
-				developer {
-					id.set("opensavvy")
-					name.set("OpenSavvy")
-					email.set("contact@opensavvy.dev")
-				}
-			}
-
-			scm {
-				url.set(System.getenv("CI_PROJECT_URL"))
-			}
+			setPomMetadataForMavenCentral()
 		}
 	}
 }
