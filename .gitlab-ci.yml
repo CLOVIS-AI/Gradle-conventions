@@ -86,7 +86,6 @@ publish:
       publishAllPublicationsToGitLabRepository
       :versions:publishAllPublicationsToGitLabRepository
       -PappVersion=$project_version
-      --no-configuration-cache
 
   interruptible: false
   rules:
