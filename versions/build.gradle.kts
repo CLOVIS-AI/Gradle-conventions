@@ -25,6 +25,10 @@ tasks.compileKotlin {
 	dependsOn(createVersion)
 }
 
+tasks.sourcesJar {
+	dependsOn(createVersion)
+}
+
 publishing {
 	publications {
 		register("versions", MavenPublication::class.java) {
