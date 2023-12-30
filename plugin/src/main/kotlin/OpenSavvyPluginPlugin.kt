@@ -67,7 +67,7 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 
 			publications.withType(MavenPublication::class.java) {
 				if (name.matches(Regex(".*PluginMarkerMaven"))) {
-					from(target.components["java"])
+					artifact(target.tasks["sourcesJar"])
 				}
 			}
 		}
