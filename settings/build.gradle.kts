@@ -7,6 +7,7 @@ dependencies {
 	implementation("dev.opensavvy.gradle.conventions:versions:$version")
 
 	implementation(libs.gradle.foojayResolver)
+	implementation(libs.gradle.enterprise)
 }
 
 gradlePlugin {
@@ -29,6 +30,11 @@ gradlePlugin {
 		create("java-toolchains") {
 			id = "dev.opensavvy.conventions.settings.java-toolchains"
 			implementationClass = "dev.opensavvy.conventions.settings.JavaToolchains"
+		}
+
+		create("gradle-enterprise") {
+			id = "dev.opensavvy.conventions.settings.enterprise"
+			implementationClass = "dev.opensavvy.conventions.settings.GradleEnterprise"
 		}
 	}
 }

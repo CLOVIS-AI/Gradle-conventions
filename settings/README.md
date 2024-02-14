@@ -26,3 +26,12 @@ Applies all the other plugins in this file, to avoid specifying them one by one.
 > Plugin ID: `dev.opensavvy.conventions.settings.java-toolchains`
 
 - Applies the [FooJay Resolver](https://github.com/gradle/foojay-toolchains)
+
+## Gradle Enterprise
+
+> Plugin ID: `dev.opensavvy.conventions.settings.enterprise`
+
+- Active only when the environment variable  `OPENSAVVY_GRADLE_ENTERPRISE` is set to `true`
+- Applies the [Gradle Enterprise plugin](https://docs.gradle.com/enterprise/gradle-plugin/)
+- Accepts the [Gradle terms of service](https://gradle.com/terms-of-service)
+- Automatically publishes a build scan when a job fails in CI

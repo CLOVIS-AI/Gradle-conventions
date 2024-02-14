@@ -9,5 +9,6 @@ class Combined : Plugin<Settings> {
 		target.plugins.apply(BuildCache::class.java)
 		target.plugins.apply(ConventionCatalog::class.java)
 		target.plugins.apply(JavaToolchains::class.java)
+		target.plugins.apply(GradleEnterprise::class.java)
 	}
 }
