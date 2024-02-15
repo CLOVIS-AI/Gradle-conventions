@@ -1,15 +1,8 @@
 [versions]
-# https://github.com/adamko-dev/dokkatoo/releases
-dokkatoo = "2.1.0"
-
-# https://github.com/gradle-nexus/publish-plugin/releases
-nexusPublish = "1.3.0"
-
-# https://github.com/gradle/foojay-toolchains/tags
-foojayResolver = "0.8.0"
-
-# https://plugins.gradle.org/plugin/com.gradle.enterprise
-gradle-enterprise = "3.16.2"
+dokkatoo = "2.1.0"             # https://github.com/adamko-dev/dokkatoo/releases
+nexusPublish = "1.3.0"         # https://github.com/gradle-nexus/publish-plugin/releases
+foojayResolver = "0.8.0"       # https://github.com/gradle/foojay-toolchains/tags
+gradle-enterprise = "3.16.2"   # https://plugins.gradle.org/plugin/com.gradle.enterprise
 
 [plugins]
 
