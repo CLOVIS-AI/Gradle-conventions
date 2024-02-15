@@ -16,7 +16,7 @@ import java.net.URI
 class OpenSavvyPluginPlugin : Plugin<Project> {
 
 	// https://gitlab.com/opensavvy/prepared
-	private val prepared = "0.6.0"
+	private val prepared = "1.0.0-rc.1"
 
 	private val javaCompatibility = 11 // for Dokkatoo
 	private val javaForTesting = 17
