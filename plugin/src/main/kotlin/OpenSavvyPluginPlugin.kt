@@ -25,11 +25,6 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 		target.pluginManager.apply("maven-publish")
 		target.pluginManager.apply("org.gradle.kotlin.kotlin-dsl")
 
-		target.repositories {
-			mavenCentral()
-			gradlePluginPortal()
-		}
-
 		target.extensions.configure<JavaPluginExtension> {
 			withSourcesJar()
 
