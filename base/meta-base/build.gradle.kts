@@ -16,7 +16,3 @@ gradlePlugin {
 		}
 	}
 }
-
-repositories {
-	mavenCentral()
-}

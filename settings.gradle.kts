@@ -6,7 +6,16 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-rootProject.name = "OpenSavvy Gradle Conventions"
+rootProject.name = "OpenSavvyGradleConventions"
+
+dependencyResolutionManagement {
+	repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+
+	repositories {
+		mavenCentral()
+		gradlePluginPortal()
+	}
+}
 
 pluginManagement {
 	includeBuild("base/meta-base")

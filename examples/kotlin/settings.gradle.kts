@@ -1,5 +1,11 @@
 rootProject.name = "Kotlin-example"
 
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
 pluginManagement {
     includeBuild("../..") // if using this in a real project, remove this
 }
