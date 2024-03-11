@@ -128,8 +128,15 @@ fun MavenPom.setPomMetadataForMavenCentral() {
 		}
 	}
 
+	issueManagement {
+		system.set("GitLab")
+		url.set(System.getenv("CI_PROJECT_URL") + "/-/issues/new")
+	}
+
 	scm {
 		url.set(System.getenv("CI_PROJECT_URL"))
+		connection.set("scm:git:" + System.getenv("CI_REPOSITORY_URL"))
+		tag.set(System.getenv("CI_COMMIT_REF_NAME"))
 	}
 }
 
