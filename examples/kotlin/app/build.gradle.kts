@@ -9,10 +9,12 @@ kotlin {
 		withJava()
 	}
 
-	val commonMain by sourceSets.getting {
-		dependencies {
-			implementation(project(":core"))
-		}
+	sourceSets.commonMain.dependencies {
+		implementation(project(":core"))
+	}
+
+	sourceSets.commonTest.dependencies {
+		implementation(libs.prepared)
 	}
 }
 

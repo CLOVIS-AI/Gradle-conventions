@@ -19,4 +19,5 @@ dependencies {
 
 	api(libs.gradle.nexusPublish)
 	api(libs.gradle.dokkatoo)
+	api(libs.gradle.kover)
 }

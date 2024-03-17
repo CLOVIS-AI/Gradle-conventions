@@ -17,4 +17,5 @@ dependencies {
 
 	implementation(libs.gradle.dokkatoo)
 	implementation(libs.gradle.nexusPublish)
+	implementation(libs.gradle.kover)
 }

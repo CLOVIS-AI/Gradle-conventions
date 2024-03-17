@@ -5,4 +5,5 @@ plugins {
 
 dependencies {
 	dokkatoo(project(":core"))
+	kover(project(":core"))
 }
