@@ -6,6 +6,10 @@ plugins {
 kotlin {
 	jvm()
 	linuxX64()
+
+	sourceSets.commonTest.dependencies {
+		implementation(libs.prepared)
+	}
 }
 
 library {
@@ -17,4 +21,6 @@ library {
 		name.set("Apache 2.0")
 		url.set("https://www.apache.org/licenses/LICENSE-2.0")
 	}
+
+	coverage.set(100)
 }
