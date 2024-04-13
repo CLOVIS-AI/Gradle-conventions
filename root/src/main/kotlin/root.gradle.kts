@@ -1,7 +1,5 @@
 package dev.opensavvy.conventions
 
-import org.gradle.internal.impldep.org.bouncycastle.cms.RecipientId.password
-
 plugins {
 	id("io.github.gradle-nexus.publish-plugin")
 	id("dev.adamko.dokkatoo-html")
