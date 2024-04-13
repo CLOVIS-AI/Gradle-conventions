@@ -11,7 +11,7 @@ object Versions {
 	 *
 	 * Compose Multiplatform versions depend on specific [KOTLIN] versions, so we must align both.
 	 */
-	const val COMPOSE_MULTIPLATFORM = "1.6.0"
+	const val COMPOSE_MULTIPLATFORM = "1.6.2"
 
 	/**
 	 * Version of Java used when creating libraries.
