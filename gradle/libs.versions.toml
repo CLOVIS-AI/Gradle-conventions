@@ -2,7 +2,7 @@
 dokkatoo = "2.3.0"             # https://github.com/adamko-dev/dokkatoo/releases
 nexusPublish = "2.0.0"         # https://github.com/gradle-nexus/publish-plugin/releases
 foojayResolver = "0.8.0"       # https://github.com/gradle/foojay-toolchains/tags
-gradle-enterprise = "3.16.2"   # https://plugins.gradle.org/plugin/com.gradle.enterprise
+gradle-enterprise = "3.17.1"   # https://plugins.gradle.org/plugin/com.gradle.enterprise
 kover = "0.7.6"                # https://github.com/Kotlin/kotlinx-kover/releases
 
 [plugins]
