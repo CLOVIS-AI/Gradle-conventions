@@ -1,6 +1,7 @@
 plugins {
 	alias(opensavvyConventions.plugins.base)
 	alias(opensavvyConventions.plugins.kotlin.application)
+	alias(opensavvyConventions.plugins.aligned.composeMultiplatform)
 	application
 }
 
@@ -11,6 +12,8 @@ kotlin {
 
 	sourceSets.commonMain.dependencies {
 		implementation(project(":core"))
+
+		implementation(compose.runtime)
 	}
 
 	sourceSets.commonTest.dependencies {
