@@ -4,14 +4,14 @@ object Versions {
 	/**
 	 * Version of Kotlin we use in our plugins.
 	 */
-	const val KOTLIN = "1.9.22"
+	const val KOTLIN = "2.0.0-RC1"
 
 	/**
 	 * Version of [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform).
 	 *
 	 * Compose Multiplatform versions depend on specific [KOTLIN] versions, so we must align both.
 	 */
-	const val COMPOSE_MULTIPLATFORM = "1.6.0"
+	const val COMPOSE_MULTIPLATFORM = "1.6.2"
 
 	/**
 	 * Version of Java used when creating libraries.
