@@ -78,6 +78,7 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 		target.dependencies {
 			testImplementation("dev.opensavvy.prepared:suite:$prepared")
 			testImplementation("dev.opensavvy.prepared:runner-kotest:$prepared")
+			testImplementation("dev.opensavvy.prepared:runner-kotlin-test:$prepared")
 			testImplementation("dev.opensavvy.prepared:compat-gradle:$prepared")
 		}
 	}
