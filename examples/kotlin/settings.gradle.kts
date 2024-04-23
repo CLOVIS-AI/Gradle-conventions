@@ -3,6 +3,7 @@ rootProject.name = "Kotlin-example"
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
+        google()
     }
 }
 

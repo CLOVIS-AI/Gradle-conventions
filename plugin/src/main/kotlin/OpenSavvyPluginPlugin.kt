@@ -15,8 +15,8 @@ import java.net.URI
 
 class OpenSavvyPluginPlugin : Plugin<Project> {
 
-	// https://gitlab.com/opensavvy/prepared
-	private val prepared = "1.0.0-rc.1"
+	// https://gitlab.com/opensavvy/groundwork/prepared/-/releases
+	private val prepared = "1.0.0"
 
 	private val javaCompatibility = 11 // for Dokkatoo
 	private val javaForTesting = 17
@@ -78,6 +78,7 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 		target.dependencies {
 			testImplementation("dev.opensavvy.prepared:suite:$prepared")
 			testImplementation("dev.opensavvy.prepared:runner-kotest:$prepared")
+			testImplementation("dev.opensavvy.prepared:runner-kotlin-test:$prepared")
 			testImplementation("dev.opensavvy.prepared:compat-gradle:$prepared")
 		}
 	}
