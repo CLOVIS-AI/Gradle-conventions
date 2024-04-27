@@ -2,7 +2,7 @@
 dokkatoo = "2.3.0"             # https://github.com/adamko-dev/dokkatoo/releases
 nexusPublish = "2.0.0"         # https://github.com/gradle-nexus/publish-plugin/releases
 foojayResolver = "0.8.0"       # https://github.com/gradle/foojay-toolchains/tags
-gradle-enterprise = "3.17.1"   # https://plugins.gradle.org/plugin/com.gradle.enterprise
+gradle-develocity = "3.17.2"   # https://plugins.gradle.org/plugin/com.gradle.develocity
 kover = "0.7.6"                # https://github.com/Kotlin/kotlinx-kover/releases
 
 [plugins]
@@ -11,7 +11,7 @@ kover = "0.7.6"                # https://github.com/Kotlin/kotlinx-kover/release
 gradle-nexusPublish = { module = "io.github.gradle-nexus:publish-plugin", version.ref = "nexusPublish" }
 gradle-dokkatoo = { module = "dev.adamko.dokkatoo:dokkatoo-plugin", version.ref = "dokkatoo" }
 gradle-foojayResolver = { module = "org.gradle.toolchains:foojay-resolver", version.ref = "foojayResolver" }
-gradle-enterprise = { module = "com.gradle:gradle-enterprise-gradle-plugin", version.ref = "gradle-enterprise" }
+gradle-develocity = { module = "com.gradle:develocity-gradle-plugin", version.ref = "gradle-develocity" }
 gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
 
 [bundles]

@@ -2,7 +2,7 @@ package dev.opensavvy.conventions.settings
 
 import org.gradle.api.Plugin
 import org.gradle.api.initialization.Settings
-import org.gradle.kotlin.dsl.gradleEnterprise
+import org.gradle.kotlin.dsl.develocity
 
 class GradleEnterprise : Plugin<Settings> {
 
@@ -11,16 +11,16 @@ class GradleEnterprise : Plugin<Settings> {
 		val runningInCi = System.getenv("CI").toBoolean()
 
 		if (gradleEnterpriseEnabled) {
-			target.plugins.apply("com.gradle.enterprise")
+			target.plugins.apply("com.gradle.develocity")
 
-			target.gradleEnterprise {
+			target.develocity {
 				buildScan {
-					termsOfServiceUrl = "https://gradle.com/terms-of-service"
-					termsOfServiceAgree = "yes"
+					termsOfUseUrl.set("https://gradle.com/help/legal-terms-of-use")
+					termsOfUseAgree.set("yes")
 
 					if (runningInCi) {
-						publishOnFailure()
-						isUploadInBackground = false
+						publishing.onlyIf { true }
+						uploadInBackground.set(false)
 
 						// Metadata to help understand what happened
 						tag("CI")

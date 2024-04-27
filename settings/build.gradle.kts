@@ -7,7 +7,7 @@ dependencies {
 	implementation("dev.opensavvy.gradle.conventions:versions:$version")
 
 	implementation(libs.gradle.foojayResolver)
-	implementation(libs.gradle.enterprise)
+	implementation(libs.gradle.develocity)
 }
 
 gradlePlugin {
