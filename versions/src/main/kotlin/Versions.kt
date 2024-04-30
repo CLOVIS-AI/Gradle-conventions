@@ -27,5 +27,5 @@ object Versions {
 	 * In end-user projects, we control the Java version used during execution, so we can use the latest version
 	 * without having to keep compatibility for older versions.
 	 */
-	const val JAVA_APP = 21
+	const val JAVA_APP = 22
 }
