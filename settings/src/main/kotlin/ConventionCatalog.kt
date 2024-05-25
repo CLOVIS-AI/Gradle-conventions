@@ -31,6 +31,7 @@ class ConventionCatalog : Plugin<Settings> {
 				plugin("aligned-kotlin", "org.jetbrains.kotlin.multiplatform").versionRef("kotlin")
 				plugin("aligned-kotlinx-serialization", "org.jetbrains.kotlin.plugin.serialization").versionRef("kotlin")
 				plugin("aligned-composeMultiplatform", "org.jetbrains.compose").versionRef("composeMultiplatform")
+				plugin("aligned-composeCompiler", "org.jetbrains.kotlin.plugin.compose").versionRef("kotlin")
 				library("aligned-kotlin-test", "org.jetbrains.kotlin", "kotlin-test").versionRef("kotlin")
 				library("aligned-kotlin-test-common", "org.jetbrains.kotlin", "kotlin-test-common").versionRef("kotlin")
 				library("aligned-kotlin-test-annotations", "org.jetbrains.kotlin", "kotlin-test-annotations-common").versionRef("kotlin")
