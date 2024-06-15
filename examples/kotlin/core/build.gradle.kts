@@ -6,6 +6,9 @@ plugins {
 
 kotlin {
 	jvm()
+	js(IR) {
+		browser()
+	}
 	linuxX64()
 
 	sourceSets.commonTest.dependencies {
