@@ -14,6 +14,7 @@
 - Configures publishing to the GitLab Maven Registry
 - Configures publishing to Maven Central
 - Configures documentation generation with Dokkatoo
+- Configures the Power Assert plugin
 
 ## Abstract Library
 
