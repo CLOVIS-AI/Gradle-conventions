@@ -13,6 +13,7 @@ plugins {
 
 dependencies {
 	api("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}")
+	api("org.jetbrains.kotlin:kotlin-power-assert:${Versions.KOTLIN}")
 	implementation("dev.opensavvy.gradle.conventions:versions:$version")
 
 	implementation(libs.gradle.dokkatoo)
