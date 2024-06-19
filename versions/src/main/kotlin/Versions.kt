@@ -28,4 +28,11 @@ object Versions {
 	 * without having to keep compatibility for older versions.
 	 */
 	const val JAVA_APP = 22
+
+	/**
+	 * The version of the Kotest library and plugins to use.
+	 *
+	 * See [the Kotest releases](https://github.com/kotest/kotest/releases/tag/v5.9.0).
+	 */
+	const val KOTEST = "5.9.1"
 }
