@@ -4,7 +4,7 @@ object Versions {
 	/**
 	 * Version of Kotlin we use in our plugins.
 	 */
-	const val KOTLIN = "2.0.0"
+	const val KOTLIN = "2.0.20"
 
 	/**
 	 * Version of [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform).
