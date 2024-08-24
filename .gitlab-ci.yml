@@ -39,15 +39,21 @@ check:
 example-kotlin:
   parallel:
     matrix:
-      - java_version: [ 11, 17, 20 ]
+      - java_version: [ jdk11-openjdk, jdk17-openjdk, jdk21-openjdk ]
 
   extends: [ .os.gradle ]
   needs: [ os.version ]
   stage: test
 
-  image: "eclipse-temurin:$java_version"
+  variables:
+    CHROME_BIN: chromium
+
+  image: "archlinux:base"
 
   script:
+    - pacman -Syuu --noconfirm $java_version chromium libxcrypt-compat
+    - mkdir -p /root/.config/
+    - echo "--no-sandbox" >>/root/.config/chromium-flags.conf
     - >
       ./gradlew build run
       -p examples/kotlin --include-build ../..
