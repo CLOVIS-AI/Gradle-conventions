@@ -5,6 +5,7 @@
 > Plugin ID: `dev.opensavvy.conventions.kotlin`
 
 - Applies the [Kotlin Multiplatform plugin](https://plugins.gradle.org/plugin/org.jetbrains.kotlin.multiplatform)
+- Configures the Power Assert plugin
 
 ## Library
 
@@ -14,7 +15,6 @@
 - Configures publishing to the GitLab Maven Registry
 - Configures publishing to Maven Central
 - Configures documentation generation with Dokkatoo
-- Configures the Power Assert plugin
 
 ## Abstract Library
 
