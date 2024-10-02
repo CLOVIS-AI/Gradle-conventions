@@ -4,14 +4,14 @@ object Versions {
 	/**
 	 * Version of Kotlin we use in our plugins.
 	 */
-	const val KOTLIN = "2.0.0"
+	const val KOTLIN = "2.0.20"
 
 	/**
 	 * Version of [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform).
 	 *
 	 * Compose Multiplatform versions depend on specific [KOTLIN] versions, so we must align both.
 	 */
-	const val COMPOSE_MULTIPLATFORM = "1.6.10"
+	const val COMPOSE_MULTIPLATFORM = "1.6.11"
 
 	/**
 	 * Version of Java used when creating libraries.
@@ -30,9 +30,14 @@ object Versions {
 	const val JAVA_APP = 22
 
 	/**
-	 * The version of the Kotest library and plugins to use.
+	 * The version of the Kotest library to use.
 	 *
 	 * See [the Kotest releases](https://github.com/kotest/kotest/releases/tag/v5.9.0).
 	 */
 	const val KOTEST = "5.9.1"
+
+	/**
+	 * The version of the Kotest plugin to use.
+	 */
+	const val KOTEST_PLUGIN = "6.0.0.M1"
 }

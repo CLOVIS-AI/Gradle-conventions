@@ -16,6 +16,7 @@ class ConventionCatalog : Plugin<Settings> {
 				version("java-compat", Versions.JAVA_COMPAT.toString())
 				version("java-app", Versions.JAVA_APP.toString())
 				version("kotest", Versions.KOTEST)
+				version("kotest-plugin", Versions.KOTEST_PLUGIN)
 				version("self", OPENSAVVY_CONVENTIONS_VERSION)
 
 				// Our other convention plugins
@@ -33,7 +34,7 @@ class ConventionCatalog : Plugin<Settings> {
 				plugin("aligned-kotlinx-serialization", "org.jetbrains.kotlin.plugin.serialization").versionRef("kotlin")
 				plugin("aligned-composeMultiplatform", "org.jetbrains.compose").versionRef("composeMultiplatform")
 				plugin("aligned-composeCompiler", "org.jetbrains.kotlin.plugin.compose").versionRef("kotlin")
-				plugin("aligned-kotest", "io.kotest.multiplatform").versionRef("kotest")
+				plugin("aligned-kotest", "io.kotest.multiplatform").versionRef("kotest-plugin")
 				library("aligned-kotlin-test", "org.jetbrains.kotlin", "kotlin-test").versionRef("kotlin")
 				library("aligned-kotlin-test-common", "org.jetbrains.kotlin", "kotlin-test-common").versionRef("kotlin")
 				library("aligned-kotlin-test-annotations", "org.jetbrains.kotlin", "kotlin-test-annotations-common").versionRef("kotlin")
