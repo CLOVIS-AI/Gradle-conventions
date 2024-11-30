@@ -3,8 +3,10 @@ package dev.opensavvy.conventions.versions
 object Versions {
 	/**
 	 * Version of Kotlin we use in our plugins.
+	 *
+	 * - [List of releases](https://kotlinlang.org/docs/releases.html#release-details)
 	 */
-	const val KOTLIN = "2.0.20"
+	const val KOTLIN = "2.1.0"
 
 	/**
 	 * Version of [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform).
