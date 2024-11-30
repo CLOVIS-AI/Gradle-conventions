@@ -12,8 +12,10 @@ object Versions {
 	 * Version of [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform).
 	 *
 	 * Compose Multiplatform versions depend on specific [KOTLIN] versions, so we must align both.
+	 *
+	 * - [List of releases](https://github.com/JetBrains/compose-multiplatform/releases)
 	 */
-	const val COMPOSE_MULTIPLATFORM = "1.6.11"
+	const val COMPOSE_MULTIPLATFORM = "1.7.1"
 
 	/**
 	 * Version of Java used when creating libraries.
