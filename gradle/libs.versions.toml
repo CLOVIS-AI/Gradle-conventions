@@ -1,7 +1,7 @@
 [versions]
 dokkatoo = "2.4.0"             # https://github.com/adamko-dev/dokkatoo/releases
 nexusPublish = "2.0.0"         # https://github.com/gradle-nexus/publish-plugin/releases
-foojayResolver = "0.8.0"       # https://github.com/gradle/foojay-toolchains/tags
+foojayResolver = "0.9.0"       # https://github.com/gradle/foojay-toolchains/tags
 gradle-develocity = "3.18.1"   # https://plugins.gradle.org/plugin/com.gradle.develocity
 kover = "0.8.3"                # https://github.com/Kotlin/kotlinx-kover/releases
 
