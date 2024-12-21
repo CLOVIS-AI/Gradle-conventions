@@ -16,7 +16,7 @@ dependencies {
 	api("org.jetbrains.kotlin:kotlin-power-assert:${Versions.KOTLIN}")
 	implementation("dev.opensavvy.gradle.conventions:versions:$version")
 
-	implementation(libs.gradle.dokkatoo)
+	implementation(libs.gradle.dokka)
 	implementation(libs.gradle.nexusPublish)
 	implementation(libs.gradle.kover)
 }

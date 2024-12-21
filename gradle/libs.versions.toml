@@ -1,15 +1,15 @@
 [versions]
-dokkatoo = "2.4.0"             # https://github.com/adamko-dev/dokkatoo/releases
+dokka = "2.0.0"                # https://github.com/Kotlin/dokka/releases
 nexusPublish = "2.0.0"         # https://github.com/gradle-nexus/publish-plugin/releases
-foojayResolver = "0.8.0"       # https://github.com/gradle/foojay-toolchains/tags
-gradle-develocity = "3.18.1"   # https://plugins.gradle.org/plugin/com.gradle.develocity
-kover = "0.8.3"                # https://github.com/Kotlin/kotlinx-kover/releases
+foojayResolver = "0.9.0"       # https://github.com/gradle/foojay-toolchains/tags
+gradle-develocity = "3.19"     # https://plugins.gradle.org/plugin/com.gradle.develocity
+kover = "0.9.0"                # https://github.com/Kotlin/kotlinx-kover/releases
 
 [plugins]
 
 [libraries]
 gradle-nexusPublish = { module = "io.github.gradle-nexus:publish-plugin", version.ref = "nexusPublish" }
-gradle-dokkatoo = { module = "dev.adamko.dokkatoo:dokkatoo-plugin", version.ref = "dokkatoo" }
+gradle-dokka = { module = "org.jetbrains.dokka:org.jetbrains.dokka.gradle.plugin", version.ref = "dokka" }
 gradle-foojayResolver = { module = "org.gradle.toolchains:foojay-resolver", version.ref = "foojayResolver" }
 gradle-develocity = { module = "com.gradle:develocity-gradle-plugin", version.ref = "gradle-develocity" }
 gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }

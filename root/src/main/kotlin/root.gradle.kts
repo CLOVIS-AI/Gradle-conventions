@@ -2,7 +2,7 @@ package dev.opensavvy.conventions
 
 plugins {
 	id("io.github.gradle-nexus.publish-plugin")
-	id("dev.adamko.dokkatoo-html")
+	id("org.jetbrains.dokka")
 	id("org.jetbrains.kotlinx.kover")
 }
 
