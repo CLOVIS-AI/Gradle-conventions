@@ -7,6 +7,7 @@ import java.net.URI
 plugins {
 	id("maven-publish")
 	id("signing")
+	id("dev.opensavvy.dokka-mkdocs")
 	id("org.jetbrains.dokka")
 	id("org.jetbrains.kotlinx.kover")
 }

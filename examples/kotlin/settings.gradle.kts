@@ -19,6 +19,7 @@ include(
     "core",
     "app",
     "plugin",
+    "mkdocs",
 )
 
 includeBuild("../..") // if using this in a real project, remove this
