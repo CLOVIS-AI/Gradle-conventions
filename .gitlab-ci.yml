@@ -68,7 +68,7 @@ example-kotlin-documentation:
 
   script:
     - >
-      ./gradlew :dokkaGenerate
+      ./gradlew :dokkaGenerate mkdocs:embedDokkaIntoMkDocs
       -p examples/kotlin --include-build ../..
       -PappVersion=$project_version
     - find examples/kotlin/build/dokka
@@ -77,6 +77,8 @@ example-kotlin-documentation:
   artifacts:
     paths:
       - examples/kotlin/build/dokka/html
+      - examples/kotlin/mkdocs/docs
+      - examples/kotlin/mkdocs/mkdocs.yml
     expose_as: Kotlin example documentation
   interruptible: true
 
