@@ -68,7 +68,7 @@ example-kotlin-documentation:
 
   script:
     - >
-      ./gradlew :dokkatooGenerate
+      ./gradlew :dokkaGenerate
       -p examples/kotlin --include-build ../..
       -PappVersion=$project_version
     - find examples/kotlin/build/dokka

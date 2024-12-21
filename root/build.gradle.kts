@@ -18,6 +18,6 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}")
 
 	api(libs.gradle.nexusPublish)
-	api(libs.gradle.dokkatoo)
+	api(libs.gradle.dokka)
 	api(libs.gradle.kover)
 }

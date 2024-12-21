@@ -7,7 +7,7 @@ import java.net.URI
 plugins {
 	id("maven-publish")
 	id("signing")
-	id("dev.adamko.dokkatoo-html")
+	id("org.jetbrains.dokka")
 	id("org.jetbrains.kotlinx.kover")
 }
 
@@ -24,10 +24,10 @@ config.coverage.convention(0)
 
 // region Documentation
 
-dokkatoo {
+dokka {
 	moduleName.set(config.name)
 
-	dokkatooSourceSets.configureEach {
+	dokkaSourceSets.configureEach {
 		// region Include the correct HTML file, if it exists
 		if (name.endsWith("Main") || name == "main") {
 			val setName = name.removeSuffix("Main")
@@ -78,7 +78,7 @@ val documentationJar by tasks.registering(Jar::class) {
 	description = "Generate the documentation JAR for MavenCentral"
 	group = "publishing"
 
-	from(tasks.named("dokkatooGeneratePublicationHtml"))
+	from(tasks.named("dokkaGeneratePublicationHtml"))
 	archiveClassifier.set("javadoc")
 }
 
