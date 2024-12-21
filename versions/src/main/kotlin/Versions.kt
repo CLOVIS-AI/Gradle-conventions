@@ -3,15 +3,19 @@ package dev.opensavvy.conventions.versions
 object Versions {
 	/**
 	 * Version of Kotlin we use in our plugins.
+	 *
+	 * - [List of releases](https://kotlinlang.org/docs/releases.html#release-details)
 	 */
-	const val KOTLIN = "2.0.20"
+	const val KOTLIN = "2.1.0"
 
 	/**
 	 * Version of [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform).
 	 *
 	 * Compose Multiplatform versions depend on specific [KOTLIN] versions, so we must align both.
+	 *
+	 * - [List of releases](https://github.com/JetBrains/compose-multiplatform/releases)
 	 */
-	const val COMPOSE_MULTIPLATFORM = "1.6.11"
+	const val COMPOSE_MULTIPLATFORM = "1.7.1"
 
 	/**
 	 * Version of Java used when creating libraries.
@@ -32,7 +36,7 @@ object Versions {
 	/**
 	 * The version of the Kotest library to use.
 	 *
-	 * See [the Kotest releases](https://github.com/kotest/kotest/releases/tag/v5.9.0).
+	 * See [the Kotest releases](https://github.com/kotest/kotest/releases).
 	 */
 	const val KOTEST = "5.9.1"
 
