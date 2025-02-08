@@ -4,7 +4,7 @@ dokka-mkdocs = "0.4.3"         # https://gitlab.com/opensavvy/automation/dokka-m
 nexusPublish = "2.0.0"         # https://github.com/gradle-nexus/publish-plugin/releases
 foojayResolver = "0.9.0"       # https://github.com/gradle/foojay-toolchains/tags
 gradle-develocity = "3.19.1"   # https://plugins.gradle.org/plugin/com.gradle.develocity
-kover = "0.9.0"                # https://github.com/Kotlin/kotlinx-kover/releases
+kover = "0.9.1"                # https://github.com/Kotlin/kotlinx-kover/releases
 
 [plugins]
 
