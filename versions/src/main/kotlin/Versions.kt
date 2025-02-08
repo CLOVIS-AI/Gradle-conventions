@@ -6,7 +6,7 @@ object Versions {
 	 *
 	 * - [List of releases](https://kotlinlang.org/docs/releases.html#release-details)
 	 */
-	const val KOTLIN = "2.1.0"
+	const val KOTLIN = "2.1.10"
 
 	/**
 	 * Version of [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform).
@@ -15,7 +15,7 @@ object Versions {
 	 *
 	 * - [List of releases](https://github.com/JetBrains/compose-multiplatform/releases)
 	 */
-	const val COMPOSE_MULTIPLATFORM = "1.7.1"
+	const val COMPOSE_MULTIPLATFORM = "1.7.3"
 
 	/**
 	 * Version of Java used when creating libraries.
