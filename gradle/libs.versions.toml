@@ -1,6 +1,6 @@
 [versions]
 dokka = "2.0.0"                # https://github.com/Kotlin/dokka/releases
-dokka-mkdocs = "0.4.3"         # https://gitlab.com/opensavvy/automation/dokka-material-mkdocs/-/releases
+dokka-mkdocs = "0.5.0"         # https://gitlab.com/opensavvy/automation/dokka-material-mkdocs/-/releases
 nexusPublish = "2.0.0"         # https://github.com/gradle-nexus/publish-plugin/releases
 foojayResolver = "0.9.0"       # https://github.com/gradle/foojay-toolchains/tags
 gradle-develocity = "3.19.1"   # https://plugins.gradle.org/plugin/com.gradle.develocity
