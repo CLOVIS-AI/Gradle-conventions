@@ -3,12 +3,15 @@ plugins {
 	alias(opensavvyConventions.plugins.kotlin.application)
 	alias(opensavvyConventions.plugins.aligned.composeMultiplatform)
 	alias(opensavvyConventions.plugins.aligned.composeCompiler)
-	application
 }
 
 kotlin {
 	jvm {
-		withJava()
+		binaries {
+			executable {
+				mainClass.set("example.MainKt")
+			}
+		}
 	}
 
 	sourceSets.commonMain.dependencies {
@@ -20,8 +23,4 @@ kotlin {
 	sourceSets.commonTest.dependencies {
 		implementation(libs.prepared)
 	}
-}
-
-application {
-	mainClass.set("example.MainKt")
 }
