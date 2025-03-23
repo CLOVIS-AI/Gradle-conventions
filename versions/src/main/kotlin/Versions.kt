@@ -43,5 +43,5 @@ object Versions {
 	/**
 	 * The version of the Kotest plugin to use.
 	 */
-	const val KOTEST_PLUGIN = "6.0.0.M1"
+	const val KOTEST_PLUGIN = "6.0.0.M2"
 }
