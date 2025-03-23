@@ -6,7 +6,7 @@ object Versions {
 	 *
 	 * - [List of releases](https://kotlinlang.org/docs/releases.html#release-details)
 	 */
-	const val KOTLIN = "2.1.10"
+	const val KOTLIN = "2.1.20"
 
 	/**
 	 * Version of [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform).
@@ -43,5 +43,5 @@ object Versions {
 	/**
 	 * The version of the Kotest plugin to use.
 	 */
-	const val KOTEST_PLUGIN = "6.0.0.M1"
+	const val KOTEST_PLUGIN = "6.0.0.M2"
 }
