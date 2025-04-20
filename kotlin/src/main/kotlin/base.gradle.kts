@@ -1,5 +1,6 @@
 package dev.opensavvy.conventions.kotlin
 
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
@@ -9,6 +10,13 @@ plugins {
 
 tasks.withType<Test>().configureEach {
 	useJUnitPlatform()
+
+	testLogging {
+		showExceptions = true
+		showStackTraces = true
+		showCauses = true
+		exceptionFormat = TestExceptionFormat.FULL
+	}
 }
 
 @OptIn(ExperimentalKotlinGradlePluginApi::class)
