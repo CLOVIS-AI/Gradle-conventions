@@ -1,6 +1,5 @@
 package dev.opensavvy.conventions.kotlin
 
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
@@ -12,10 +11,18 @@ tasks.withType<Test>().configureEach {
 	useJUnitPlatform()
 
 	testLogging {
-		showExceptions = true
-		showStackTraces = true
-		showCauses = true
-		exceptionFormat = TestExceptionFormat.FULL
+		showExceptions = false
+
+		val reporter = TestOutputReporter()
+		beforeTest(KotlinClosure1<TestDescriptor, Unit>({
+			reporter.beforeTest(this)
+		}))
+		onOutput(KotlinClosure2<TestDescriptor, TestOutputEvent, Unit>({ descriptor, event ->
+			reporter.reportTest(descriptor, event)
+		}))
+		afterTest(KotlinClosure2<TestDescriptor, TestResult, Unit>({ descriptor, result ->
+			reporter.afterTest(descriptor, result)
+		}))
 	}
 }
 
@@ -35,4 +42,43 @@ powerAssert {
 		"kotlin.test.assertEquals",
 		"kotlin.test.assertNull",
 	)
+}
+
+private class TestOutputReporter {
+	private val tests = HashMap<TestDescriptor, ArrayList<TestOutputEvent>>()
+	private val reportingLock = Any()
+
+	fun beforeTest(descriptor: TestDescriptor) = synchronized(this) {
+		tests[descriptor] = arrayListOf()
+	}
+
+	fun reportTest(descriptor: TestDescriptor, event: TestOutputEvent) {
+		println("Reporting event ${event.message} for test ${descriptor.displayName}")
+		synchronized(this) { tests.computeIfAbsent(descriptor) { arrayListOf() } }
+			.add(event)
+	}
+
+	fun afterTest(descriptor: TestDescriptor, result: TestResult) {
+		val events = synchronized(this) { tests.remove(descriptor) }
+			?: return
+
+		if (result.resultType != TestResult.ResultType.FAILURE)
+			return
+
+		val testName = generateSequence(descriptor) { it.parent }
+			.toList()
+			.reversed()
+			.joinToString(" › ") { it.displayName }
+
+		synchronized(reportingLock) {
+			logger.lifecycle("> $testName")
+			for (event in events) {
+				logger.lifecycle(event.message)
+			}
+			logger.lifecycle("> Thrown during execution:")
+			for (exception in result.exceptions) {
+				logger.lifecycle(exception.stackTraceToString())
+			}
+		}
+	}
 }
