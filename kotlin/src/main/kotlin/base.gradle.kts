@@ -53,7 +53,6 @@ private class TestOutputReporter {
 	}
 
 	fun reportTest(descriptor: TestDescriptor, event: TestOutputEvent) {
-		println("Reporting event ${event.message} for test ${descriptor.displayName}")
 		synchronized(this) { tests.computeIfAbsent(descriptor) { arrayListOf() } }
 			.add(event)
 	}
