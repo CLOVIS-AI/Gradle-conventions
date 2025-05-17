@@ -1,5 +1,5 @@
 [versions]
-prepared = "1.5.2"         # https://gitlab.com/opensavvy/prepared/-/releases
 
 [libraries]
-prepared = { module = "dev.opensavvy.prepared:runner-kotest", version.ref = "prepared" }
+
+[plugins]
