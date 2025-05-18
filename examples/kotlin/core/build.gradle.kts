@@ -1,7 +1,7 @@
 plugins {
 	alias(opensavvyConventions.plugins.base)
 	alias(opensavvyConventions.plugins.kotlin.library)
-	alias(opensavvyConventions.plugins.aligned.kotest)
+	alias(shared.plugins.kotest)
 }
 
 kotlin {
@@ -12,7 +12,7 @@ kotlin {
 	linuxX64()
 
 	sourceSets.commonTest.dependencies {
-		implementation(libs.prepared)
+		implementation(shared.prepared)
 	}
 }
 

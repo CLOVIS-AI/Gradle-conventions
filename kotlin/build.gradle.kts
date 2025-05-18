@@ -1,5 +1,3 @@
-import dev.opensavvy.conventions.versions.Versions
-
 buildscript {
 	dependencies {
 		classpath("dev.opensavvy.gradle.conventions:versions:$version")
@@ -12,8 +10,8 @@ plugins {
 }
 
 dependencies {
-	api("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}")
-	api("org.jetbrains.kotlin:kotlin-power-assert:${Versions.KOTLIN}")
+	implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.versions.kotlin.get()}")
+	implementation("org.jetbrains.kotlin:kotlin-power-assert:${libs.versions.kotlin.get()}")
 	implementation("dev.opensavvy.gradle.conventions:versions:$version")
 
 	implementation(libs.gradle.dokka)

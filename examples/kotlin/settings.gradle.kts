@@ -5,6 +5,12 @@ dependencyResolutionManagement {
         mavenCentral()
         google()
     }
+
+    versionCatalogs {
+        create("shared") {
+            from(files("../../gradle/libs.versions.toml"))
+        }
+    }
 }
 
 pluginManagement {

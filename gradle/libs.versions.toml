@@ -1,4 +1,9 @@
 [versions]
+kotlin = "2.1.21"              # https://kotlinlang.org/docs/releases.html#release-details
+compose = "1.8.0"              # https://github.com/JetBrains/compose-multiplatform/releases
+kotest = "5.9.1"               # https://github.com/kotest/kotest/releases
+kotest-plugin = "6.0.0.M2"
+prepared = "1.5.2"             # https://gitlab.com/opensavvy/prepared/-/releases
 dokka = "2.0.0"                # https://github.com/Kotlin/dokka/releases
 dokka-mkdocs = "0.5.0"         # https://gitlab.com/opensavvy/automation/dokka-material-mkdocs/-/releases
 nexusPublish = "2.0.0"         # https://github.com/gradle-nexus/publish-plugin/releases
@@ -7,6 +12,10 @@ gradle-develocity = "3.19.2"   # https://plugins.gradle.org/plugin/com.gradle.de
 kover = "0.9.1"                # https://github.com/Kotlin/kotlinx-kover/releases
 
 [plugins]
+kotlin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose" }
+kotest = { id = "io.kotest.multiplatform", version.ref = "kotest-plugin" }
 
 [libraries]
 gradle-nexusPublish = { module = "io.github.gradle-nexus:publish-plugin", version.ref = "nexusPublish" }
@@ -15,5 +24,6 @@ gradle-dokka-mkdocs = { module = "dev.opensavvy.dokka-mkdocs:dev.opensavvy.dokka
 gradle-foojayResolver = { module = "org.gradle.toolchains:foojay-resolver", version.ref = "foojayResolver" }
 gradle-develocity = { module = "com.gradle:develocity-gradle-plugin", version.ref = "gradle-develocity" }
 gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
+prepared = { module = "dev.opensavvy.prepared:runner-kotest", version.ref = "prepared" }
 
 [bundles]
