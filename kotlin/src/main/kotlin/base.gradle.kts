@@ -70,13 +70,13 @@ private class TestOutputReporter {
 			.joinToString(" › ") { it.displayName }
 
 		synchronized(reportingLock) {
-			logger.lifecycle("> $testName")
+			println("> $testName")
 			for (event in events) {
-				logger.lifecycle(event.message)
+				println(event.message)
 			}
-			logger.lifecycle("> Thrown during execution:")
+			println("> Thrown during execution:")
 			for (exception in result.exceptions) {
-				logger.lifecycle(exception.stackTraceToString())
+				println(exception.stackTraceToString())
 			}
 		}
 	}
