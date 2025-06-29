@@ -39,7 +39,7 @@ check:
 example-kotlin:
   parallel:
     matrix:
-      - java_version: [ jdk11-openjdk, jdk17-openjdk, jdk21-openjdk ]
+      - java_version: [ jdk17-openjdk, jdk21-openjdk, jdk-openjdk ]
 
   extends: [ .os.gradle ]
   needs: [ os.version ]
