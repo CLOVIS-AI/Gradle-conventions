@@ -16,6 +16,5 @@ dependencies {
 
 	implementation(libs.gradle.dokka)
 	implementation(libs.gradle.dokka.mkdocs)
-	implementation(libs.gradle.nexusPublish)
 	implementation(libs.gradle.kover)
 }
