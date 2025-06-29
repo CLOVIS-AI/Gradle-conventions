@@ -55,7 +55,7 @@ example-kotlin:
     - mkdir -p /root/.config/
     - echo "--no-sandbox" >>/root/.config/chromium-flags.conf
     - >
-      ./gradlew build run
+      ./gradlew build runJvm
       -p examples/kotlin --include-build ../..
       -PappVersion=$project_version
 
