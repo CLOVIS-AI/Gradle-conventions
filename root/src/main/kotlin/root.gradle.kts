@@ -18,6 +18,17 @@ nmcpAggregation {
 		publishingType = "AUTOMATIC"
 		publicationName = "$projectPath version $refSlug pipeline $pipelineId"
 	}
-
-	publishAllProjectsProbablyBreakingProjectIsolation()
 }
+
+val library by configurations.registering {
+	isCanBeResolved = false
+	isCanBeConsumed = false
+}
+
+fun NamedDomainObjectProvider<Configuration>.includeLibraries() {
+	this.get().extendsFrom(library.get())
+}
+
+configurations.dokka.includeLibraries()
+configurations.kover.includeLibraries()
+configurations.nmcpAggregation.includeLibraries()
