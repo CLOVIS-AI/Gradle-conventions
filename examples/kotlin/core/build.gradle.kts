@@ -1,7 +1,7 @@
 plugins {
 	alias(opensavvyConventions.plugins.base)
 	alias(opensavvyConventions.plugins.kotlin.library)
-	alias(shared.plugins.kotest)
+	alias(shared.plugins.testBalloon)
 }
 
 kotlin {
@@ -14,7 +14,7 @@ kotlin {
 	mingwX64()
 
 	sourceSets.commonTest.dependencies {
-		implementation(shared.prepared)
+		implementation(shared.prepared.testBalloon)
 	}
 }
 
