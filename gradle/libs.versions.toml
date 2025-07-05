@@ -1,6 +1,8 @@
 [versions]
-kotlin = "2.1.21"              # https://kotlinlang.org/docs/releases.html#release-details
-compose = "1.8.0"              # https://github.com/JetBrains/compose-multiplatform/releases
+kotlin = "2.2.0"               # https://kotlinlang.org/docs/releases.html#release-details
+
+compose = "1.8.2"              # https://github.com/JetBrains/compose-multiplatform/releases
+
 kotest = "5.9.1"               # https://github.com/kotest/kotest/releases
 kotest-plugin = "6.0.0.M2"
 prepared = "2.0.6"             # https://gitlab.com/opensavvy/prepared/-/releases
