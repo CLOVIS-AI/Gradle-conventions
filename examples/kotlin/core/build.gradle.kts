@@ -9,7 +9,9 @@ kotlin {
 	js(IR) {
 		browser()
 	}
+	iosX64()
 	linuxX64()
+	mingwX64()
 
 	sourceSets.commonTest.dependencies {
 		implementation(shared.prepared)

@@ -18,8 +18,8 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 	// https://gitlab.com/opensavvy/groundwork/prepared/-/releases
 	private val prepared = "1.5.2"
 
-	private val javaCompatibility = 11 // for Dokkatoo
-	private val javaForTesting = 17
+	private val javaCompatibility = 17
+	private val javaForTesting = 21
 
 	override fun apply(target: Project) {
 		target.pluginManager.apply("maven-publish")

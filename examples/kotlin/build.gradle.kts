@@ -5,6 +5,5 @@ plugins {
 }
 
 dependencies {
-	dokka(project(":core"))
-	kover(project(":core"))
+	library(project(":core"))
 }

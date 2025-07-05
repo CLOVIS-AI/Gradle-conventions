@@ -10,7 +10,7 @@ plugins {
 }
 
 dependencies {
-	api(libs.gradle.nexusPublish)
+	api(libs.gradle.nmcp)
 	api(libs.gradle.dokka)
 	api(libs.gradle.dokka.mkdocs)
 	api(libs.gradle.kover)
