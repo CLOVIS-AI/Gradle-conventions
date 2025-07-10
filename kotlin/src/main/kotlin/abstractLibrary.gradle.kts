@@ -5,6 +5,7 @@ import kotlinx.kover.gradle.plugin.dsl.GroupingEntityType
 import java.net.URI
 
 plugins {
+	id("com.gradleup.nmcp")
 	id("maven-publish")
 	id("signing")
 	id("dev.opensavvy.dokka-mkdocs")
