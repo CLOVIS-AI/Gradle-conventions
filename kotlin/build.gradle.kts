@@ -14,6 +14,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-power-assert:${libs.versions.kotlin.get()}")
 	implementation("dev.opensavvy.gradle.conventions:versions:$version")
 
+	api(libs.gradle.nmcp)
 	implementation(libs.gradle.dokka)
 	implementation(libs.gradle.dokka.mkdocs)
 	implementation(libs.gradle.kover)
