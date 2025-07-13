@@ -1,8 +1,3 @@
-buildscript {
-	dependencies {
-		classpath("dev.opensavvy.gradle.conventions:versions:$version")
-	}
-}
 
 plugins {
 	id("dev.opensavvy.conventions.meta.base")
@@ -12,7 +7,7 @@ plugins {
 dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.versions.kotlin.get()}")
 	implementation("org.jetbrains.kotlin:kotlin-power-assert:${libs.versions.kotlin.get()}")
-	implementation("dev.opensavvy.gradle.conventions:versions:$version")
+	implementation(project(":versions"))
 
 	api(libs.gradle.nmcp)
 	implementation(libs.gradle.dokka)

@@ -30,8 +30,5 @@ include(
 	"root",
 	"kotlin",
 	"settings",
-)
-
-includeBuild(
 	"versions",
 )
