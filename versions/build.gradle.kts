@@ -4,21 +4,37 @@ plugins {
 	id("dev.opensavvy.conventions.meta.plugin")
 }
 
-val createVersion by tasks.registering {
-	description = "Store the self version into the resources"
+val createVersion by tasks.registering(EmbedVersionTask::class) {
+	sources.set(project.layout.projectDirectory.file("src/").toString())
+	this.version = project.version.toString()
+}
 
-	val file = project.layout.projectDirectory.file("src/main/kotlin/Self.kt").asFile
+abstract class EmbedVersionTask : DefaultTask() {
 
-	doLast {
-		file.writeText("""
-			package dev.opensavvy.conventions.versions
-			
-			const val OPENSAVVY_CONVENTIONS_VERSION = "$version"
-		""".trimIndent())
+	@get:Input
+	abstract val sources: Property<String>
+
+	@get:Internal
+	val writePath: Provider<String>
+		get() = sources.map { "$it/main/kotlin/Self.kt" }
+
+	@get:Input
+	abstract val version: Property<String>
+
+	init {
+		description = "Store the self version into the resources"
+
+		outputs.file(writePath)
 	}
 
-	inputs.property("version", version)
-	outputs.file(file)
+	@TaskAction
+	fun embedVersion() {
+		File(writePath.get()).writeText("""
+			package dev.opensavvy.conventions.versions
+			
+			const val OPENSAVVY_CONVENTIONS_VERSION = "${version.get()}"
+		""".trimIndent())
+	}
 }
 
 tasks.compileKotlin {
