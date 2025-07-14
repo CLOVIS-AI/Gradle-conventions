@@ -1,8 +1,3 @@
-buildscript {
-	dependencies {
-		classpath("dev.opensavvy.gradle.conventions:versions:$version")
-	}
-}
 
 plugins {
 	id("dev.opensavvy.conventions.meta.base")

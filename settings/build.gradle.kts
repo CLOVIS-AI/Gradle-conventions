@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-	implementation("dev.opensavvy.gradle.conventions:versions:$version")
+	implementation(project(":versions"))
 
 	implementation(libs.gradle.foojayResolver)
 	implementation(libs.gradle.develocity)
