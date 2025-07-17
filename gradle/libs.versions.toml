@@ -8,7 +8,7 @@ prepared = "2.0.6"             # https://gitlab.com/opensavvy/prepared/-/release
 dokka = "2.0.0"                # https://github.com/Kotlin/dokka/releases
 dokka-mkdocs = "0.5.2"         # https://gitlab.com/opensavvy/automation/dokka-material-mkdocs/-/releases
 foojayResolver = "1.0.0"       # https://github.com/gradle/foojay-toolchains/tags
-gradle-develocity = "3.19.2"   # https://plugins.gradle.org/plugin/com.gradle.develocity
+gradle-develocity = "4.1"      # https://plugins.gradle.org/plugin/com.gradle.develocity
 kover = "0.9.1"                # https://github.com/Kotlin/kotlinx-kover/releases
 nmcp = "1.0.1"                 # https://github.com/GradleUp/nmcp/releases
 
