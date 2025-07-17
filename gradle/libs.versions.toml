@@ -1,8 +1,9 @@
 [versions]
-kotlin = "2.1.21"              # https://kotlinlang.org/docs/releases.html#release-details
-compose = "1.8.0"              # https://github.com/JetBrains/compose-multiplatform/releases
-kotest = "5.9.1"               # https://github.com/kotest/kotest/releases
-kotest-plugin = "6.0.0.M2"
+kotlin = "2.2.0"               # https://kotlinlang.org/docs/releases.html#release-details
+
+compose = "1.8.2"              # https://github.com/JetBrains/compose-multiplatform/releases
+
+testBalloon = "0.3.3-K2.2.0"   # https://github.com/infix-de/testBalloon/releases
 prepared = "2.0.6"             # https://gitlab.com/opensavvy/prepared/-/releases
 dokka = "2.0.0"                # https://github.com/Kotlin/dokka/releases
 dokka-mkdocs = "0.5.2"         # https://gitlab.com/opensavvy/automation/dokka-material-mkdocs/-/releases
@@ -15,7 +16,7 @@ nmcp = "1.0.1"                 # https://github.com/GradleUp/nmcp/releases
 kotlin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose" }
-kotest = { id = "io.kotest.multiplatform", version.ref = "kotest-plugin" }
+testBalloon = { id = "de.infix.testBalloon", version.ref = "testBalloon" }
 
 [libraries]
 gradle-dokka = { module = "org.jetbrains.dokka:org.jetbrains.dokka.gradle.plugin", version.ref = "dokka" }
@@ -24,6 +25,6 @@ gradle-foojayResolver = { module = "org.gradle.toolchains:foojay-resolver", vers
 gradle-develocity = { module = "com.gradle:develocity-gradle-plugin", version.ref = "gradle-develocity" }
 gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
 gradle-nmcp = { module = "com.gradleup.nmcp:nmcp", version.ref = "nmcp" }
-prepared = { module = "dev.opensavvy.prepared:runner-kotest", version.ref = "prepared" }
+prepared-testBalloon = { module = "dev.opensavvy.prepared:runner-kotest", version.ref = "prepared" }
 
 [bundles]

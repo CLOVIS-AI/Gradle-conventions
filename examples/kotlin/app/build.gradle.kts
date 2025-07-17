@@ -21,6 +21,6 @@ kotlin {
 	}
 
 	sourceSets.commonTest.dependencies {
-		implementation(shared.prepared)
+		implementation(shared.prepared.testBalloon)
 	}
 }
