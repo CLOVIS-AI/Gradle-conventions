@@ -134,7 +134,7 @@ pages:
 
   script:
     - mkdir -p public
-    - mv docs-website public/docs
+    - mv -T docs-website public
 
   artifacts:
     paths:
