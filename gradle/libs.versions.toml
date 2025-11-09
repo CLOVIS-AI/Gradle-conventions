@@ -1,5 +1,5 @@
 [versions]
-kotlin = "2.2.10"               # https://kotlinlang.org/docs/releases.html#release-details
+kotlin = "2.2.21"              # https://kotlinlang.org/docs/releases.html#release-details
 
 compose = "1.8.2"              # https://github.com/JetBrains/compose-multiplatform/releases
 
