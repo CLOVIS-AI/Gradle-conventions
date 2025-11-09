@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.2.21"              # https://kotlinlang.org/docs/releases.html#release-details
 
-compose = "1.8.2"              # https://github.com/JetBrains/compose-multiplatform/releases
+compose = "1.9.3"              # https://github.com/JetBrains/compose-multiplatform/releases
 
 testBalloon = "0.6.0-K2.2.0"   # https://github.com/infix-de/testBalloon/releases
 prepared = "2.1.1"             # https://gitlab.com/opensavvy/prepared/-/releases
