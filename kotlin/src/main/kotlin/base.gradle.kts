@@ -41,6 +41,9 @@ powerAssert {
 		"kotlin.test.assertFalse",
 		"kotlin.test.assertEquals",
 		"kotlin.test.assertNull",
+
+		// Prepared
+		"opensavvy.prepared.suite.assertions.log",
 	)
 }
 
