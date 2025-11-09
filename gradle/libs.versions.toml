@@ -4,13 +4,13 @@ kotlin = "2.2.10"               # https://kotlinlang.org/docs/releases.html#rele
 compose = "1.8.2"              # https://github.com/JetBrains/compose-multiplatform/releases
 
 testBalloon = "0.6.0-K2.2.0"   # https://github.com/infix-de/testBalloon/releases
-prepared = "2.1.0"             # https://gitlab.com/opensavvy/prepared/-/releases
+prepared = "2.1.1"             # https://gitlab.com/opensavvy/prepared/-/releases
 dokka = "2.0.0"                # https://github.com/Kotlin/dokka/releases
-dokka-mkdocs = "0.5.2"         # https://gitlab.com/opensavvy/automation/dokka-material-mkdocs/-/releases
+dokka-mkdocs = "0.5.3"         # https://gitlab.com/opensavvy/automation/dokka-material-mkdocs/-/releases
 foojayResolver = "1.0.0"       # https://github.com/gradle/foojay-toolchains/tags
-gradle-develocity = "4.1.1"    # https://plugins.gradle.org/plugin/com.gradle.develocity
-kover = "0.9.1"                # https://github.com/Kotlin/kotlinx-kover/releases
-nmcp = "1.1.0"                 # https://github.com/GradleUp/nmcp/releases
+gradle-develocity = "4.2.2"    # https://plugins.gradle.org/plugin/com.gradle.develocity
+kover = "0.9.2"                # https://github.com/Kotlin/kotlinx-kover/releases
+nmcp = "1.2.0"                 # https://github.com/GradleUp/nmcp/releases
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
