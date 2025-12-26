@@ -12,9 +12,11 @@ dokka = "2.1.0"                # https://github.com/Kotlin/dokka/releases
 dokka-mkdocs = "0.5.3"         # https://dokka-mkdocs.opensavvy.dev/news/index.html
 
 foojayResolver = "1.0.0"       # https://github.com/gradle/foojay-toolchains/tags
-gradle-develocity = "4.2.2"    # https://plugins.gradle.org/plugin/com.gradle.develocity
 kover = "0.9.3"                # https://github.com/Kotlin/kotlinx-kover/releases
 nmcp = "1.2.0"                 # https://github.com/GradleUp/nmcp/releases
+
+gradle-develocity = "4.3"      # https://plugins.gradle.org/plugin/com.gradle.develocity
+
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
