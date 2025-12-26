@@ -3,8 +3,9 @@ kotlin = "2.3.0"              # https://kotlinlang.org/docs/releases.html#releas
 
 compose = "1.9.3"              # https://github.com/JetBrains/compose-multiplatform/releases
 
-prepared = "2.1.1"             # https://gitlab.com/opensavvy/prepared/-/releases
 testBalloon = "0.7.1-K2.3.0"   # https://github.com/infix-de/testBalloon/releases
+
+prepared = "2.3.0"             # https://prepared.opensavvy.dev/news/index.html
 
 dokka = "2.1.0"                # https://github.com/Kotlin/dokka/releases
 dokka-mkdocs = "0.5.3"         # https://gitlab.com/opensavvy/automation/dokka-material-mkdocs/-/releases
