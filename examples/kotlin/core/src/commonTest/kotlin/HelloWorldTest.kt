@@ -13,6 +13,6 @@ class HelloWorldTest : PreparedSpec({
 	}
 
 	test("Create an instance of the HelloWorld class") {
-		HelloWorld()
+		check(HelloWorld() != null)
 	}
 })

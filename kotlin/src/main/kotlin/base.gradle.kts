@@ -84,3 +84,9 @@ private class TestOutputReporter {
 		}
 	}
 }
+
+kotlin {
+	compilerOptions {
+		freeCompilerArgs.add("-Xreturn-value-checker=full")
+	}
+}
