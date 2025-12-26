@@ -4,6 +4,15 @@ plugins {
 	alias(opensavvyConventions.plugins.kotlin.abstractLibrary)
 }
 
+gradlePlugin {
+	plugins {
+		create("plugin") {
+			id = "example.kotlin.example"
+			implementationClass = "example.kotlin.Example"
+		}
+	}
+}
+
 library {
 	name.set("Kotlin Sample: Gradle Plugin")
 	description.set("Just a normal sample")
