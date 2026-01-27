@@ -11,6 +11,7 @@ import org.gradle.authentication.http.HttpHeaderAuthentication
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
 import org.gradle.kotlin.dsl.*
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.net.URI
 
 class OpenSavvyPluginPlugin : Plugin<Project> {
@@ -64,6 +65,22 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 				if (name.matches(Regex(".*PluginMarkerMaven"))) {
 					artifact(target.tasks["sourcesJar"])
 				}
+			}
+		}
+
+		val version = target.provider {
+			val version = embeddedKotlinVersion.replaceAfterLast('.', "") // Remove the patch version
+				.removeSuffix(".")
+			target.logger.info("Setting the Kotlin compatibility target to $version")
+			@Suppress("EnumValuesSoftDeprecate") // '.entries' does not exist yet for the Kotlin version used in plugins
+			org.jetbrains.kotlin.gradle.dsl.KotlinVersion.values().find { it.version == version }
+				?: error("Could not set Kotlin compatibility for this plugin module to $version. Embedded Kotlin version: $embeddedKotlinVersion. Known versions: ${org.jetbrains.kotlin.gradle.dsl.KotlinVersion.values().map { it.version }}")
+		}
+
+		target.tasks.withType(KotlinCompile::class.java) {
+			compilerOptions {
+				apiVersion.set(version.get())
+				languageVersion.set(version.get())
 			}
 		}
 

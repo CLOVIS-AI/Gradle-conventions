@@ -17,6 +17,12 @@ gradlePlugin {
 	}
 }
 
+dependencies {
+	// Necessary for auto-complete
+	// Substituted at runtime by kotlin-dsl
+	compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:${embeddedKotlinVersion}")
+}
+
 kotlin {
 	jvmToolchain(11)
 }
