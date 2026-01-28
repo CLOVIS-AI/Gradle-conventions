@@ -12,7 +12,7 @@ import kotlin.time.Duration.Companion.minutes
 class ExampleTest : PreparedSpec({
     test("The group is applied correctly", config = CoroutineTimeout(1.minutes)) {
         gradle.settingsKts("""
-            rootProject.name "test"
+            rootProject.name = "test"
         """.trimIndent())
 
         gradle.rootProject.buildKts("""
