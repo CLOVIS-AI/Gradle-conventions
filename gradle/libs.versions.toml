@@ -19,11 +19,14 @@ kover = "0.9.4"                # https://github.com/Kotlin/kotlinx-kover/release
 
 nmcp = "1.4.0"                 # https://github.com/GradleUp/nmcp/releases
 
+tapmoc = "0.4.0"               # https://github.com/GradleUp/tapmoc/releases
+
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose" }
 testBalloon = { id = "de.infix.testBalloon", version.ref = "testBalloon" }
+tapmoc = { id = "com.gradleup.tapmoc", version.ref = "tapmoc" }
 
 [libraries]
 gradle-dokka = { module = "org.jetbrains.dokka:org.jetbrains.dokka.gradle.plugin", version.ref = "dokka" }
@@ -32,6 +35,7 @@ gradle-foojayResolver = { module = "org.gradle.toolchains:foojay-resolver", vers
 gradle-develocity = { module = "com.gradle:develocity-gradle-plugin", version.ref = "gradle-develocity" }
 gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
 gradle-nmcp = { module = "com.gradleup.nmcp:nmcp", version.ref = "nmcp" }
+gradle-tapmoc = { module = "com.gradleup.tapmoc:com.gradleup.tapmoc.gradle.plugin", version.ref = "tapmoc" }
 prepared-testBalloon = { module = "dev.opensavvy.prepared:runner-kotest", version.ref = "prepared" }
 
 [bundles]

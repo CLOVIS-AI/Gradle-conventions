@@ -8,5 +8,5 @@
 
 plugins {
 	`kotlin-dsl` apply false
-	`embedded-kotlin` apply false
+	alias(libs.plugins.tapmoc) apply false
 }

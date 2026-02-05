@@ -1,5 +1,10 @@
 plugins {
 	`kotlin-dsl`
+	alias(libs.plugins.tapmoc)
+}
+
+tapmoc {
+	java(11)
 }
 
 sourceSets.main.configure {
@@ -21,8 +26,6 @@ dependencies {
 	// Necessary for auto-complete
 	// Substituted at runtime by kotlin-dsl
 	compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:${embeddedKotlinVersion}")
+	implementation(libs.gradle.tapmoc)
 }
 
-kotlin {
-	jvmToolchain(11)
-}

@@ -5,8 +5,9 @@ import dev.opensavvy.conventions.versions.Versions
 plugins {
 	id("dev.opensavvy.conventions.kotlin.base")
 	id("dev.opensavvy.conventions.kotlin.abstractLibrary")
+	id("com.gradleup.tapmoc")
 }
 
-kotlin {
-	jvmToolchain(Versions.JAVA_COMPAT)
+tapmoc {
+	java(Versions.JAVA_COMPAT)
 }

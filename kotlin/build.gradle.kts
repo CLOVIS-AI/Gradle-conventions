@@ -10,6 +10,7 @@ dependencies {
 	implementation(project(":versions"))
 
 	api(libs.gradle.nmcp)
+	implementation(libs.gradle.tapmoc)
 	implementation(libs.gradle.dokka)
 	implementation(libs.gradle.dokka.mkdocs)
 	implementation(libs.gradle.kover)
