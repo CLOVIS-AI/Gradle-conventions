@@ -54,7 +54,7 @@ example-kotlin:
     - echo "--no-sandbox" >>/root/.config/chromium-flags.conf
     - >
       ./gradlew build runJvm
-      -p examples/kotlin --include-build ../..
+      -p examples/kotlin 
       -PappVersion=$project_version
 
   interruptible: true
@@ -67,7 +67,7 @@ example-kotlin-documentation:
   script:
     - >
       ./gradlew :dokkaGenerate mkdocs:embedDokkaIntoMkDocs
-      -p examples/kotlin --include-build ../..
+      -p examples/kotlin 
       -PappVersion=$project_version
     - find examples/kotlin/build/dokka
     - test -f examples/kotlin/build/dokka/html/index.html
