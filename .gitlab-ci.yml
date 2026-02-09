@@ -35,10 +35,6 @@ check:
   interruptible: true
 
 example-kotlin:
-  parallel:
-    matrix:
-      - java_version: [ jdk17-openjdk, jdk21-openjdk, jdk-openjdk ]
-
   extends: [ .os.gradle ]
   needs: [ os.version ]
   stage: test
@@ -49,7 +45,7 @@ example-kotlin:
   image: "archlinux:base"
 
   script:
-    - pacman -Syuu --noconfirm $java_version chromium libxcrypt-compat
+    - pacman -Syuu --noconfirm jdk-openjdk jdk21-openjdk chromium libxcrypt-compat
     - mkdir -p /root/.config/
     - echo "--no-sandbox" >>/root/.config/chromium-flags.conf
     - >
