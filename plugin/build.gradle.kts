@@ -7,6 +7,7 @@ dependencies {
 	// Necessary for auto-complete
 	// Substituted at runtime by kotlin-dsl
 	compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.versions.kotlin.get()}")
+	implementation(libs.gradle.tapmoc)
 }
 
 gradlePlugin {

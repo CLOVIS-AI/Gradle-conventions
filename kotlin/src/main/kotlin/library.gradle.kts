@@ -1,13 +1,13 @@
 package dev.opensavvy.conventions.kotlin
 
 import dev.opensavvy.conventions.versions.Versions
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
 	id("dev.opensavvy.conventions.kotlin.base")
 	id("dev.opensavvy.conventions.kotlin.abstractLibrary")
+	id("com.gradleup.tapmoc")
 }
 
-kotlin {
-	jvmToolchain(Versions.JAVA_COMPAT)
+tapmoc {
+	java(Versions.JAVA_COMPAT)
 }

@@ -11,7 +11,7 @@ import org.gradle.authentication.http.HttpHeaderAuthentication
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.jvm.toolchain.JavaToolchainService
 import org.gradle.kotlin.dsl.*
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import tapmoc.TapmocExtension
 import java.net.URI
 
 class OpenSavvyPluginPlugin : Plugin<Project> {
@@ -25,14 +25,14 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 	override fun apply(target: Project) {
 		target.pluginManager.apply("maven-publish")
 		target.pluginManager.apply("org.gradle.kotlin.kotlin-dsl")
+		target.pluginManager.apply("com.gradleup.tapmoc")
 
 		target.extensions.configure<JavaPluginExtension> {
 			withSourcesJar()
-
-			toolchain {
-				languageVersion.set(JavaLanguageVersion.of(javaCompatibility))
-			}
 		}
+
+		val tapmoc = target.extensions.getByType(TapmocExtension::class.java)
+		tapmoc.java(javaCompatibility)
 
 		/*
 		 * When running in GitLab, uses the auto-created CI variables to configure the GitLab Maven Registry.
@@ -77,12 +77,7 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 				?: error("Could not set Kotlin compatibility for this plugin module to $version. Embedded Kotlin version: $embeddedKotlinVersion. Known versions: ${org.jetbrains.kotlin.gradle.dsl.KotlinVersion.values().map { it.version }}")
 		}
 
-		target.tasks.withType(KotlinCompile::class.java) {
-			compilerOptions {
-				apiVersion.set(version.get())
-				languageVersion.set(version.get())
-			}
-		}
+		tapmoc.kotlin("${version.get().version}.0")
 
 		target.tasks.withType(Test::class.java) {
 			useJUnitPlatform()

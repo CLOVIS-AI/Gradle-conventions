@@ -35,10 +35,6 @@ check:
   interruptible: true
 
 example-kotlin:
-  parallel:
-    matrix:
-      - java_version: [ jdk17-openjdk, jdk21-openjdk, jdk-openjdk ]
-
   extends: [ .os.gradle ]
   needs: [ os.version ]
   stage: test
@@ -49,12 +45,12 @@ example-kotlin:
   image: "archlinux:base"
 
   script:
-    - pacman -Syuu --noconfirm $java_version chromium libxcrypt-compat
+    - pacman -Syuu --noconfirm jdk-openjdk jdk21-openjdk chromium libxcrypt-compat
     - mkdir -p /root/.config/
     - echo "--no-sandbox" >>/root/.config/chromium-flags.conf
     - >
       ./gradlew build runJvm
-      -p examples/kotlin --include-build ../..
+      -p examples/kotlin 
       -PappVersion=$project_version
 
   interruptible: true
@@ -67,7 +63,7 @@ example-kotlin-documentation:
   script:
     - >
       ./gradlew :dokkaGenerate mkdocs:embedDokkaIntoMkDocs
-      -p examples/kotlin --include-build ../..
+      -p examples/kotlin 
       -PappVersion=$project_version
     - find examples/kotlin/build/dokka
     - test -f examples/kotlin/build/dokka/html/index.html

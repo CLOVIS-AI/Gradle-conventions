@@ -1,5 +1,10 @@
 plugins {
 	`kotlin-dsl`
+	alias(libs.plugins.tapmoc)
+}
+
+tapmoc {
+	java(11)
 }
 
 sourceSets.main.configure {
@@ -15,8 +20,4 @@ gradlePlugin {
 			implementationClass = "dev.opensavvy.conventions.OpenSavvyBasePlugin"
 		}
 	}
-}
-
-kotlin {
-	jvmToolchain(11)
 }
