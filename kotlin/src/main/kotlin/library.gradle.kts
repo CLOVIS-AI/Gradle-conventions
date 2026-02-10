@@ -1,7 +1,6 @@
 package dev.opensavvy.conventions.kotlin
 
 import dev.opensavvy.conventions.versions.Versions
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
 	id("dev.opensavvy.conventions.kotlin.base")
@@ -11,3 +10,15 @@ plugins {
 kotlin {
 	jvmToolchain(Versions.JAVA_COMPAT)
 }
+
+// region Explicit return types
+
+kotlin {
+	sourceSets.configureEach {
+		compilerOptions {
+			freeCompilerArgs = listOf("-XXexplicit-return-types=strict")
+		}
+	}
+}
+
+// endregion
