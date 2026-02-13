@@ -11,3 +11,15 @@ plugins {
 tapmoc {
 	java(Versions.JAVA_COMPAT)
 }
+
+// region Explicit return types
+
+kotlin {
+	sourceSets.configureEach {
+		compilerOptions {
+			freeCompilerArgs = listOf("-XXexplicit-return-types=strict")
+		}
+	}
+}
+
+// endregion

@@ -1,6 +1,6 @@
 package example
 
-const val HELLO_WORLD = "Hello world!"
+const val HELLO_WORLD: String = "Hello world!"
 
 /**
  * Empty class with documentation.
