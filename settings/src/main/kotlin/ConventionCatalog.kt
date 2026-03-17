@@ -1,7 +1,6 @@
 package dev.opensavvy.conventions.settings
 
-import dev.opensavvy.conventions.versions.OPENSAVVY_CONVENTIONS_VERSION
-import dev.opensavvy.conventions.versions.Versions
+import dev.opensavvy.conventions.versions.*
 import org.gradle.api.Plugin
 import org.gradle.api.initialization.Settings
 
@@ -24,6 +23,11 @@ class ConventionCatalog : Plugin<Settings> {
 				plugin("kotlin-abstractLibrary", "dev.opensavvy.conventions.kotlin.abstractLibrary").versionRef("self")
 				plugin("kotlin-application", "dev.opensavvy.conventions.kotlin.application").versionRef("self")
 				plugin("kotlin-internal", "dev.opensavvy.conventions.kotlin.internal").versionRef("self")
+
+				// Other plugins we use
+				plugin("kover", "org.jetbrains.kotlinx:kover-gradle-plugin").version(OPENSAVVY_CONVENTIONS_VERSION_KOVER)
+				plugin("nmcp", "com.gradleup.nmcp:nmcp").version(OPENSAVVY_CONVENTIONS_VERSION_NMCP)
+				plugin("tapmoc", "com.gradleup.tapmoc:com.gradleup.tapmoc.gradle.plugin").version(OPENSAVVY_CONVENTIONS_VERSION_TAPMOC)
 			}
 		}
 	}
