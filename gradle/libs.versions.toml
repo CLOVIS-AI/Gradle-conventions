@@ -9,7 +9,7 @@ prepared = "2.5.0"             # https://prepared.opensavvy.dev/news/index.html
 
 dokka = "2.1.0"                # https://github.com/Kotlin/dokka/releases
 
-dokka-mkdocs = "0.5.3"         # https://dokka-mkdocs.opensavvy.dev/news/index.html
+dokka-mkdocs = "0.6.1"         # https://dokka-mkdocs.opensavvy.dev/news/index.html
 
 foojayResolver = "1.0.0"       # https://github.com/gradle/foojay-toolchains/tags
 
