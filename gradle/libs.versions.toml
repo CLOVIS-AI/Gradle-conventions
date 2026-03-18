@@ -17,7 +17,7 @@ gradle-develocity = "4.3.2"    # https://plugins.gradle.org/plugin/com.gradle.de
 
 kover = "0.9.7"                # https://github.com/Kotlin/kotlinx-kover/releases
 
-nmcp = "1.4.0"                 # https://github.com/GradleUp/nmcp/releases
+nmcp = "1.4.4"                 # https://github.com/GradleUp/nmcp/releases
 
 tapmoc = "0.4.0"               # https://github.com/GradleUp/tapmoc/releases
 
