@@ -7,6 +7,9 @@ plugins {
 val createVersion by tasks.registering(EmbedVersionTask::class) {
 	writePath.set(project.layout.projectDirectory.file("src/main/kotlin/Self.kt"))
 	version = project.version.toString()
+	koverVersion = libs.versions.kover.get()
+	nmcpVersion = libs.versions.nmcp.get()
+	tapmocVersion = libs.versions.tapmoc.get()
 }
 
 abstract class EmbedVersionTask : DefaultTask() {
@@ -16,6 +19,15 @@ abstract class EmbedVersionTask : DefaultTask() {
 
 	@get:Input
 	abstract val version: Property<String>
+
+	@get:Input
+	abstract val koverVersion: Property<String>
+
+	@get:Input
+	abstract val nmcpVersion: Property<String>
+
+	@get:Input
+	abstract val tapmocVersion: Property<String>
 
 	init {
 		description = "Store the self version into the resources"
@@ -27,6 +39,9 @@ abstract class EmbedVersionTask : DefaultTask() {
 			package dev.opensavvy.conventions.versions
 			
 			const val OPENSAVVY_CONVENTIONS_VERSION = "${version.get()}"
+			const val OPENSAVVY_CONVENTIONS_VERSION_KOVER = "${koverVersion.get()}"
+			const val OPENSAVVY_CONVENTIONS_VERSION_NMCP = "${nmcpVersion.get()}"
+			const val OPENSAVVY_CONVENTIONS_VERSION_TAPMOC = "${tapmocVersion.get()}"
 		""".trimIndent())
 	}
 }
