@@ -1,9 +1,9 @@
 package example
 
-import opensavvy.prepared.runner.kotest.PreparedSpec
+import opensavvy.prepared.runner.testballoon.*
 
 @Suppress("unused")
-class HelloWorldTest : PreparedSpec({
+val HelloWorldTest by preparedSuite {
 	// These tests are bad and are typical of tests written to pass coverage checks
 	// rather than actually verify the quality of the software.
 	// But oh well, this example is just about checking the coverage tool is actually enabled, so too bad.
@@ -15,4 +15,4 @@ class HelloWorldTest : PreparedSpec({
 	test("Create an instance of the HelloWorld class") {
 		check(HelloWorld() != null)
 	}
-})
+}

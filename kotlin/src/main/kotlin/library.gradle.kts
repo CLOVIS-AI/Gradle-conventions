@@ -18,7 +18,7 @@ kotlin {
 	sourceSets.configureEach {
 		if (name.endsWith("Main", ignoreCase = true)) {
 			compilerOptions {
-				freeCompilerArgs = listOf("-XXexplicit-return-types=strict")
+				freeCompilerArgs = listOf("-XXexplicit-return-types=warning")
 			}
 		}
 	}
