@@ -3,7 +3,7 @@ kotlin = "2.3.10"              # https://kotlinlang.org/docs/releases.html#relea
 
 compose = "1.10.2"             # https://github.com/JetBrains/compose-multiplatform/releases
 
-testBalloon = "0.7.1-K2.3.0"   # https://github.com/infix-de/testBalloon/releases
+testBalloon = "0.8.4-K2.3.0"   # https://github.com/infix-de/testBalloon/releases
 
 prepared = "2.5.0"             # https://prepared.opensavvy.dev/news/index.html
 
@@ -36,6 +36,6 @@ gradle-develocity = { module = "com.gradle:develocity-gradle-plugin", version.re
 gradle-kover = { module = "org.jetbrains.kotlinx:kover-gradle-plugin", version.ref = "kover" }
 gradle-nmcp = { module = "com.gradleup.nmcp:nmcp", version.ref = "nmcp" }
 gradle-tapmoc = { module = "com.gradleup.tapmoc:com.gradleup.tapmoc.gradle.plugin", version.ref = "tapmoc" }
-prepared-testBalloon = { module = "dev.opensavvy.prepared:runner-kotest", version.ref = "prepared" }
+prepared-testBalloon = { module = "dev.opensavvy.prepared:runner-testballoon", version.ref = "prepared" }
 
 [bundles]
