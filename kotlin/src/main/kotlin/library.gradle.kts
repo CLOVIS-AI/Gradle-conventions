@@ -1,6 +1,7 @@
 package dev.opensavvy.conventions.kotlin
 
 import dev.opensavvy.conventions.versions.Versions
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	id("dev.opensavvy.conventions.kotlin.base")
@@ -14,12 +15,10 @@ tapmoc {
 
 // region Explicit return types
 
-kotlin {
-	sourceSets.configureEach {
-		if (name.endsWith("Main", ignoreCase = true)) {
-			compilerOptions {
-				freeCompilerArgs = listOf("-XXexplicit-return-types=warning")
-			}
+tasks.withType<KotlinCompile> {
+	if (!this.name.contains("test", ignoreCase = true)) {
+		compilerOptions {
+			freeCompilerArgs.add("-XXexplicit-return-types=warning")
 		}
 	}
 }

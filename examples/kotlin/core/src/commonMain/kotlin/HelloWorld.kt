@@ -8,5 +8,6 @@ const val HELLO_WORLD: String = "Hello world!"
 class HelloWorld
 
 fun foo() {
+	val _ = 5
 	println(HELLO_WORLD)
 }
