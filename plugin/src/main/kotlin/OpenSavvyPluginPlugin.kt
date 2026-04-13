@@ -15,7 +15,7 @@ import java.net.URI
 class OpenSavvyPluginPlugin : Plugin<Project> {
 
 	// https://gitlab.com/opensavvy/groundwork/prepared/-/releases
-	private val prepared = "2.0.6"
+	private val prepared = "2.5.1"
 
 	private val javaCompatibility = 17
 
