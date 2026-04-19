@@ -8,8 +8,6 @@ import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.tasks.testing.Test
 import org.gradle.authentication.http.HttpHeaderAuthentication
-import org.gradle.jvm.toolchain.JavaLanguageVersion
-import org.gradle.jvm.toolchain.JavaToolchainService
 import org.gradle.kotlin.dsl.*
 import tapmoc.TapmocExtension
 import java.net.URI
@@ -17,10 +15,9 @@ import java.net.URI
 class OpenSavvyPluginPlugin : Plugin<Project> {
 
 	// https://gitlab.com/opensavvy/groundwork/prepared/-/releases
-	private val prepared = "2.0.6"
+	private val prepared = "2.5.1"
 
 	private val javaCompatibility = 17
-	private val javaForTesting = 21
 
 	override fun apply(target: Project) {
 		target.pluginManager.apply("maven-publish")
@@ -81,9 +78,6 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 
 		target.tasks.withType(Test::class.java) {
 			useJUnitPlatform()
-			javaLauncher = target.extensions.getByType<JavaToolchainService>().launcherFor {
-				languageVersion.set(JavaLanguageVersion.of(javaForTesting))
-			}
 		}
 
 		val testImplementation by target.configurations.getting
