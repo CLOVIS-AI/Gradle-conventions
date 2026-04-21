@@ -5,7 +5,7 @@ compose = "1.10.3"             # https://github.com/JetBrains/compose-multiplatf
 
 testBalloon = "0.8.4-K2.3.0"   # https://github.com/infix-de/testBalloon/releases
 
-prepared = "2.5.0"             # https://prepared.opensavvy.dev/news/index.html
+prepared = "2.5.1"             # https://prepared.opensavvy.dev/news/index.html
 
 dokka = "2.1.0"                # https://github.com/Kotlin/dokka/releases
 
