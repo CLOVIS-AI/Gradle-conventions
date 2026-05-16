@@ -9,7 +9,7 @@ kotlin {
 	js(IR) {
 		browser()
 	}
-	iosX64()
+	iosArm64()
 	linuxX64()
 	mingwX64()
 
