@@ -25,9 +25,13 @@ class ConventionCatalog : Plugin<Settings> {
 				plugin("kotlin-internal", "dev.opensavvy.conventions.kotlin.internal").versionRef("self")
 
 				// Other plugins we use
-				plugin("kover", "org.jetbrains.kotlinx:kover-gradle-plugin").version(OPENSAVVY_CONVENTIONS_VERSION_KOVER)
-				plugin("nmcp", "com.gradleup.nmcp:nmcp").version(OPENSAVVY_CONVENTIONS_VERSION_NMCP)
-				plugin("tapmoc", "com.gradleup.tapmoc:com.gradleup.tapmoc.gradle.plugin").version(OPENSAVVY_CONVENTIONS_VERSION_TAPMOC)
+				plugin("kover", "org.jetbrains.kotlinx.kover").version(OPENSAVVY_CONVENTIONS_VERSION_KOVER)
+				plugin("nmcp", "com.gradleup.nmcp").version(OPENSAVVY_CONVENTIONS_VERSION_NMCP)
+				plugin("tapmoc", "com.gradleup.tapmoc").version(OPENSAVVY_CONVENTIONS_VERSION_TAPMOC)
+
+				library("gradle-kover", "org.jetbrains.kotlinx", "kover-gradle-plugin").version(OPENSAVVY_CONVENTIONS_VERSION_KOVER)
+				library("gradle-nmcp", "com.gradleup.nmcp", "nmcp").version(OPENSAVVY_CONVENTIONS_VERSION_NMCP)
+				library("gradle-tapmoc", "com.gradleup.tapmoc", "com.gradleup.tapmoc.gradle.plugin").version(OPENSAVVY_CONVENTIONS_VERSION_TAPMOC)
 			}
 		}
 	}
