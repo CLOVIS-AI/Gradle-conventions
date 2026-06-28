@@ -3,13 +3,14 @@ package dev.opensavvy.conventions.settings
 import org.gradle.api.Plugin
 import org.gradle.api.initialization.Settings
 import org.gradle.caching.http.HttpBuildCache
-import org.gradle.kotlin.dsl.provideDelegate
 import java.net.URI
 
 class BuildCache : Plugin<Settings> {
 
 	override fun apply(target: Settings) {
-		val buildCacheUrl: String? by target
+		val buildCacheUrl: String? = target.providers
+			.gradleProperty("buildCacheUrl")
+			.orNull
 
 		val username = System.getenv("GRADLE_BUILD_CACHE_CREDENTIALS")?.split(':')?.get(0)
 		val password = System.getenv("GRADLE_BUILD_CACHE_CREDENTIALS")?.split(':')?.get(1)
