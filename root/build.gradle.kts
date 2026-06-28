@@ -10,3 +10,12 @@ dependencies {
 	api(libs.gradle.dokka.mkdocs)
 	api(libs.gradle.kover)
 }
+
+gradlePlugin {
+	plugins {
+		create("root") {
+			id = "dev.opensavvy.conventions.root"
+			implementationClass = "dev.opensavvy.conventions.OpenSavvyRootPlugin"
+		}
+	}
+}
