@@ -18,16 +18,16 @@ class OpenSavvyRootPlugin : Plugin<Project> {
 			val pipelineId = System.getenv("CI_PIPELINE_IID")
 
 			centralPortal {
-				it.username.set(System.getenv("OSSRH_USERNAME"))
-				it.password.set(System.getenv("OSSRH_PASSWORD"))
-				it.publishingType.set("AUTOMATIC")
-				it.publicationName.set("$projectPath version $refSlug pipeline $pipelineId")
+				username.set(System.getenv("OSSRH_USERNAME"))
+				password.set(System.getenv("OSSRH_PASSWORD"))
+				publishingType.set("AUTOMATIC")
+				publicationName.set("$projectPath version $refSlug pipeline $pipelineId")
 			}
 		}
 
 		val libraries = project.configurations.register("library") {
-			it.isCanBeResolved = false
-			it.isCanBeConsumed = false
+			isCanBeResolved = false
+			isCanBeConsumed = false
 		}
 
 		project.configurations.getByName("dokka").extendsFrom(libraries.get())
