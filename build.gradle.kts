@@ -7,6 +7,7 @@
  */
 
 plugins {
-	`kotlin-dsl` apply false
+	alias(libs.plugins.kotlin) apply false
+	alias(libs.plugins.testBalloon) apply false
 	alias(libs.plugins.tapmoc) apply false
 }
