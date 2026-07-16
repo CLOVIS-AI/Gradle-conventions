@@ -16,6 +16,11 @@ object Versions {
 	 * In end-user projects, we control the Java version used during execution, so we can use the latest version
 	 * without having to keep compatibility for older versions.
 	 */
-	const val JAVA_APP = 25
+	const val JAVA_APP = 26
+
+	/**
+	 * Version of `kotlinx.coroutines` used to enable the coroutines debug agent on JVM test tasks.
+	 */
+	const val KOTLINX_COROUTINES = "1.11.0" // https://github.com/Kotlin/kotlinx.coroutines/releases
 
 }
