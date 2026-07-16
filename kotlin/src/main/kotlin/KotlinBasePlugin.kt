@@ -18,11 +18,19 @@ class KotlinBasePlugin : Plugin<Project> {
 		target.pluginManager.apply("org.jetbrains.kotlin.multiplatform")
 		target.pluginManager.apply("org.jetbrains.kotlin.plugin.power-assert")
 
-		val coroutinesDebugAgentJar = target.configurations.detachedConfiguration(
-			target.dependencies.create("org.jetbrains.kotlinx:kotlinx-coroutines-debug:${Versions.KOTLINX_COROUTINES}")
-		).apply {
-			isTransitive = false
-		}.singleFile
+		/**
+		 * Automatically adds the KotlinX.Coroutines Debug Agent to JVM tests.
+		 *
+		 * Disable with -PcoroutinesDebugAgent=false
+		 */
+		val coroutinesDebugAgentEnabled = (target.findProperty("coroutinesDebugAgent") as? String)?.toBoolean() ?: true
+		val coroutinesDebugAgentJar by lazy {
+			target.configurations.detachedConfiguration(
+				target.dependencies.create("org.jetbrains.kotlinx:kotlinx-coroutines-debug:${Versions.KOTLINX_COROUTINES}")
+			).apply {
+				isTransitive = false
+			}.singleFile
+		}
 
 		target.tasks.withType(Test::class.java) {
 			useJUnitPlatform()
@@ -30,14 +38,16 @@ class KotlinBasePlugin : Plugin<Project> {
 				showExceptions = false
 			}
 
-			jvmArgumentProviders.add(object : CommandLineArgumentProvider {
-				@get:Classpath
-				val agentClasspath = target.files(coroutinesDebugAgentJar)
+			if (coroutinesDebugAgentEnabled) {
+				jvmArgumentProviders.add(object : CommandLineArgumentProvider {
+					@get:Classpath
+					val agentClasspath = target.files(coroutinesDebugAgentJar)
 
-				override fun asArguments() = listOf("-javaagent:${coroutinesDebugAgentJar.absolutePath}")
-			})
+					override fun asArguments() = listOf("-javaagent:${coroutinesDebugAgentJar.absolutePath}")
+				})
 
-			systemProperty("kotlinx.coroutines.debug.enable.creation.stack.trace", "true")
+				systemProperty("kotlinx.coroutines.debug.enable.creation.stack.trace", "true")
+			}
 		}
 
 		target.extensions.configure<PowerAssertGradleExtension> {
