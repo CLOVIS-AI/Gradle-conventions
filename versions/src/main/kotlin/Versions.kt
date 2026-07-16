@@ -18,4 +18,9 @@ object Versions {
 	 */
 	const val JAVA_APP = 26
 
+	/**
+	 * Version of `kotlinx.coroutines` used to enable the coroutines debug agent on JVM test tasks.
+	 */
+	const val KOTLINX_COROUTINES = "1.11.0" // https://github.com/Kotlin/kotlinx.coroutines/releases
+
 }
