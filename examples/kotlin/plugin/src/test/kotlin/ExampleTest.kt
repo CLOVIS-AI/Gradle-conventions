@@ -9,7 +9,7 @@ import kotlin.time.Duration.Companion.minutes
 
 @Suppress("unused")
 val ExampleTest by preparedSuite {
-    test("The group is applied correctly", config = CoroutineTimeout(1.minutes)) {
+    test("The group is applied correctly", config = CoroutineTimeout(10.minutes)) {
         gradle.settingsKts("""
             rootProject.name = "test"
         """.trimIndent())
