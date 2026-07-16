@@ -1,6 +1,5 @@
 package dev.opensavvy.conventions
 
-import io.kotest.matchers.string.shouldContain
 import opensavvy.prepared.compat.filesystem.div
 import opensavvy.prepared.compat.gradle.buildKts
 import opensavvy.prepared.compat.gradle.gradle
@@ -31,7 +30,7 @@ fun SuiteDsl.baseTests() = suite("Base plugin") {
 				.withArguments("build")
 				.build()
 
-			result.output shouldContain "Missing group declaration; you should add 'appGroup=<your group name>' in the gradle.properties file"
+			check("Missing group declaration; you should add 'appGroup=<your group name>' in the gradle.properties file" in result.output)
 		}
 
 		test("Should use the configured group") {
@@ -60,7 +59,7 @@ fun SuiteDsl.baseTests() = suite("Base plugin") {
 				.withArguments("printGroup")
 				.build()
 
-			result.output shouldContain "Group: dev.opensavvy.test"
+			check("Group: dev.opensavvy.test" in result.output)
 		}
 	}
 
@@ -91,7 +90,7 @@ fun SuiteDsl.baseTests() = suite("Base plugin") {
 				.withArguments("printVersion", "-PappVersion=1.0.0")
 				.build()
 
-			result.output shouldContain "Version: 1.0.0"
+			check("Version: 1.0.0" in result.output)
 		}
 
 		test("A default version should be configured") {
@@ -120,7 +119,7 @@ fun SuiteDsl.baseTests() = suite("Base plugin") {
 				.withArguments("printVersion")
 				.build()
 
-			result.output shouldContain "Version: DEV"
+			check("Version: DEV" in result.output)
 		}
 	}
 }

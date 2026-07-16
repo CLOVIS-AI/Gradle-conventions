@@ -1,5 +1,7 @@
 plugins {
-	`kotlin-dsl`
+	id("org.jetbrains.kotlin.jvm") version libs.versions.kotlin.get()
+	`java-gradle-plugin`
+	id("org.jetbrains.kotlin.plugin.sam.with.receiver") version libs.versions.kotlin.get()
 	alias(libs.plugins.tapmoc)
 }
 
@@ -23,9 +25,11 @@ gradlePlugin {
 }
 
 dependencies {
-	// Necessary for auto-complete
-	// Substituted at runtime by kotlin-dsl
-	compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:${embeddedKotlinVersion}")
+	implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.versions.kotlin.get()}")
+	implementation("org.jetbrains.kotlin:kotlin-sam-with-receiver:${libs.versions.kotlin.get()}")
 	implementation(libs.gradle.tapmoc)
 }
 
+samWithReceiver {
+	annotation(HasImplicitReceiver::class.qualifiedName!!)
+}

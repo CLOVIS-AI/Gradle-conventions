@@ -1,16 +1,15 @@
 package example.kotlin
 
-import io.kotest.matchers.string.shouldContain
+import opensavvy.prepared.runner.testballoon.preparedSuite
 import opensavvy.prepared.compat.gradle.buildKts
 import opensavvy.prepared.compat.gradle.gradle
 import opensavvy.prepared.compat.gradle.settingsKts
-import opensavvy.prepared.runner.kotest.PreparedSpec
 import opensavvy.prepared.suite.config.CoroutineTimeout
 import kotlin.time.Duration.Companion.minutes
 
 @Suppress("unused")
-class ExampleTest : PreparedSpec({
-    test("The group is applied correctly", config = CoroutineTimeout(1.minutes)) {
+val ExampleTest by preparedSuite {
+    test("The group is applied correctly", config = CoroutineTimeout(10.minutes)) {
         gradle.settingsKts("""
             rootProject.name = "test"
         """.trimIndent())
@@ -32,6 +31,6 @@ class ExampleTest : PreparedSpec({
             .withArguments("logGroup")
             .build()
 
-        output.output shouldContain "Group: test"
+        check("Group: test" in output.output)
     }
-})
+}

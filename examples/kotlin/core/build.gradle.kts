@@ -15,6 +15,7 @@ kotlin {
 
 	sourceSets.commonTest.dependencies {
 		implementation(shared.prepared.testBalloon)
+		implementation("org.jetbrains.kotlin:kotlin-test:${shared.versions.kotlin.get()}")
 	}
 }
 
