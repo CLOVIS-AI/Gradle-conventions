@@ -1,5 +1,4 @@
 plugins {
-	`kotlin-dsl`
 	id("dev.opensavvy.conventions.meta.base")
 	id("dev.opensavvy.conventions.meta.plugin")
 }
