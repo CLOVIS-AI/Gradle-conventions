@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
 	jvm()
-	js(IR) {
+	js {
 		browser()
 	}
 	iosArm64()
