@@ -1,10 +1,10 @@
 package dev.opensavvy.conventions.kotlin
 
+import com.gradleup.tapmoc.TapmocExtension
 import dev.opensavvy.conventions.versions.Versions
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
-import tapmoc.TapmocExtension
 
 class KotlinInternalPlugin : Plugin<Project> {
 
