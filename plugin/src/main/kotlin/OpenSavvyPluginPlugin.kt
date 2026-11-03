@@ -1,5 +1,6 @@
 package dev.opensavvy.conventions
 
+import com.gradleup.tapmoc.TapmocExtension
 import org.gradle.api.HasImplicitReceiver
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -10,7 +11,6 @@ import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.tasks.testing.Test
 import org.gradle.authentication.http.HttpHeaderAuthentication
 import org.jetbrains.kotlin.samWithReceiver.gradle.SamWithReceiverExtension
-import tapmoc.TapmocExtension
 import java.net.URI
 
 class OpenSavvyPluginPlugin : Plugin<Project> {
