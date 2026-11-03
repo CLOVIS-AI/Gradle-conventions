@@ -7,8 +7,11 @@ import org.gradle.api.tasks.Classpath
 import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.configure
 import org.gradle.process.CommandLineArgumentProvider
+import org.jetbrains.kotlin.gradle.ExperimentalJsTestDsl
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.targets.js.dsl.KotlinJsBrowserDsl
+import org.jetbrains.kotlin.gradle.targets.js.ir.KotlinJsIrTarget
 import org.jetbrains.kotlin.powerassert.gradle.PowerAssertGradleExtension
 
 class KotlinBasePlugin : Plugin<Project> {
@@ -70,6 +73,40 @@ class KotlinBasePlugin : Plugin<Project> {
 		target.extensions.configure<KotlinMultiplatformExtension> {
 			compilerOptions {
 				freeCompilerArgs.add("-Xreturn-value-checker=full")
+			}
+
+			/**
+			 * Configures which browsers to use for JS tests.
+			 *
+			 * Configure with -Popensavvy.js.browser=<browser> or in gradle.properties:
+			 * - `default` (or unset): chromium and firefox
+			 * - `chromium`: only chromium
+			 * - `firefox`: only firefox
+			 * - `webkit`: only webkit
+			 */
+			val jsBrowser = (target.findProperty("opensavvy.js.browser") as? String)?.trim()?.lowercase() ?: "default"
+
+			targets.configureEach {
+				if (this is KotlinJsIrTarget) {
+					subTargets.configureEach {
+						if (this is KotlinJsBrowserDsl) {
+							@OptIn(ExperimentalJsTestDsl::class)
+							test {
+								when (jsBrowser) {
+									"default" -> {
+										chromium()
+										firefox()
+									}
+
+									"chromium" -> chromium()
+									"firefox" -> firefox()
+									"webkit" -> webkit()
+									else -> error("Unknown browser '$jsBrowser' configured in 'opensavvy.js.browser'. Expected one of: 'default', 'chromium', 'firefox', 'webkit'.")
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
