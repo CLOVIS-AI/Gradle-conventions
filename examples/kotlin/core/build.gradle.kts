@@ -8,10 +8,25 @@ kotlin {
 	jvm()
 	js {
 		browser()
+		nodejs()
 	}
-	iosArm64()
 	linuxX64()
+	linuxArm64()
+	macosArm64()
+	iosArm64()
+	iosSimulatorArm64()
+	watchosArm64()
+	watchosSimulatorArm64()
+	tvosArm64()
+	tvosSimulatorArm64()
 	mingwX64()
+	wasmJs {
+		browser()
+		nodejs()
+	}
+	wasmWasi {
+		nodejs()
+	}
 
 	sourceSets.commonTest.dependencies {
 		implementation(shared.prepared.testBalloon)

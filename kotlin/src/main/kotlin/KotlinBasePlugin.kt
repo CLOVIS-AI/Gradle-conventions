@@ -10,6 +10,7 @@ import org.gradle.process.CommandLineArgumentProvider
 import org.jetbrains.kotlin.gradle.ExperimentalJsTestDsl
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
 import org.jetbrains.kotlin.gradle.targets.js.dsl.KotlinJsBrowserDsl
 import org.jetbrains.kotlin.gradle.targets.js.ir.KotlinJsIrTarget
 import org.jetbrains.kotlin.powerassert.gradle.PowerAssertGradleExtension
@@ -87,7 +88,7 @@ class KotlinBasePlugin : Plugin<Project> {
 			val jsBrowser = (target.findProperty("opensavvy.js.browser") as? String)?.trim()?.lowercase() ?: "default"
 
 			targets.configureEach {
-				if (this is KotlinJsIrTarget) {
+				if (this is KotlinJsIrTarget && platformType == KotlinPlatformType.js) {
 					subTargets.configureEach {
 						if (this is KotlinJsBrowserDsl) {
 							@OptIn(ExperimentalJsTestDsl::class)
