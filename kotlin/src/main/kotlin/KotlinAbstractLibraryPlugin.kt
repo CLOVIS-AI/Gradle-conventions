@@ -228,7 +228,7 @@ class KotlinAbstractLibraryPlugin : Plugin<Project> {
 
 		pom.scm {
 			url.set(System.getenv("CI_PROJECT_URL"))
-			connection.set("scm:git:" + System.getenv("CI_REPOSITORY_URL"))
+			connection.set("scm:git:${System.getenv("CI_SERVER_URL")}/${System.getenv("CI_PROJECT_PATH_SLUG")}.git")
 			tag.set(System.getenv("CI_COMMIT_REF_NAME"))
 		}
 	}
