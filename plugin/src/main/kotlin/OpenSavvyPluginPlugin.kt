@@ -19,7 +19,7 @@ class OpenSavvyPluginPlugin : Plugin<Project> {
 	private val targetedKotlin = "2.3.0"
 
 	// https://gitlab.com/opensavvy/groundwork/prepared/-/releases
-	private val prepared = "2.5.3"
+	private val prepared = "2.6.0"
 
 	private val javaCompatibility = 17
 
